@@ -1,16 +1,15 @@
 using System;
 using System.Runtime.InteropServices;
-using DesktopFilesGui.Attributes;
 using DesktopFilesGui.Models;
 using DesktopFilesGui.Models.Enums;
 using Serilog;
-
-namespace DesktopFilesGui.Services.ShellThemeLoader.Strategies;
-
 using System;
 using System.Runtime.InteropServices;
 
-[ShellType(Shell.GNOME)]
+
+namespace DesktopFilesGui.Services.ShellThemeLoader.Strategies;
+
+
 public class GNOMEThemeLoaderStrategy(ILogger logger) : IBaseThemeLoaderStrategy
 {
     const string GTK = "libgtk-3.so.0";
@@ -58,11 +57,13 @@ public class GNOMEThemeLoaderStrategy(ILogger logger) : IBaseThemeLoaderStrategy
     
             gtk_style_context_restore(context);
     
-            return new ShellTheme
+            var result =  new ShellTheme
             {
                 Primary = GdkRgbaToShellColor(primaryColor),
                 Secondary = GdkRgbaToShellColor(secondaryColor),
             };
+            logger.Information("Load GNOME theme: {theme}", result);
+            return result;
         }
         catch (Exception ex)
         {

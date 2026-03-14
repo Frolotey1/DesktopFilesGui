@@ -1,20 +1,176 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:DesktopFilesGui.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="DesktopFilesGui.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="DesktopFilesGui">
+<Window
+    CanMaximize="False"
+    Icon="/Assets/avalonia-logo.ico"
+    MaxHeight="500"
+    MaxWidth="400"
+    MinHeight="100"
+    MinWidth="80"
+    Name="MainView"
+    Title="DesktopFilesGui"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="DesktopFilesGui.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:avaloniaEdit="https://github.com/avaloniaui/avaloniaedit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:vm="using:DesktopFilesGui.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Window.Resources>
+        <system:Double x:Key="TextBoxWidth">300</system:Double>
+        <system:Double x:Key="ButtonSize">50</system:Double>
+        <system:Double x:Key="IconWidth">20</system:Double>
+    </Window.Resources>
 
+    <Grid RowDefinitions="Auto, *, Auto">
+        <Menu Grid.Row="0">
+            <MenuItem Header="Open">
+                <MenuItem Header="Open desktop files in 'Files'" Icon="{icons:MaterialIconExt Kind=Files}" />
+                <MenuItem Header="Show list of the desktop file" Icon="{icons:MaterialIconExt Kind=ListBox}" />
+                <MenuItem Header="Open desktop file" Icon="{icons:MaterialIconExt Kind=OpenInApp}" />
+            </MenuItem>
+            <MenuItem Header="Services">
+                <MenuItem Header="Close the app" Icon="{icons:MaterialIconExt Kind=Close}" />
+                <MenuItem Header="Open github source" Icon="{icons:MaterialIconExt Kind=Github}" />
+            </MenuItem>
+        </Menu>
+        <ScrollViewer Grid.Row="1" Margin="5,0,0,0">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <icons:MaterialIcon
+                        Kind="Rename"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource IconWidth}" />
+                    <TextBox Watermark="Desktop file name" Width="{StaticResource TextBoxWidth}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <icons:MaterialIcon
+                        Kind="FileCode"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource IconWidth}" />
+                    <TextBox Watermark="Path to file" Width="{StaticResource TextBoxWidth}" />
+                    <Button
+                        Content="{icons:MaterialIconExt Kind=Search}"
+                        Height="{StaticResource ButtonSize}"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource ButtonSize}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Margin="5,10,0,0" />
+                    <TextBlock Margin="0,15,0,0" Text="Show terminal" />
+                    <Button
+                        BorderBrush="Transparent"
+                        Classes="outline"
+                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
+                        Margin="20,10,0,0"
+                        ToolTip.Placement="RightEdgeAlignedTop">
+                        <ToolTip.Tip>
+                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                <icons:MaterialIcon Kind="Help" />
+                                <TextBlock Margin="0,4,0,0">Allows terminal to appear after application start</TextBlock>
+                            </StackPanel>
+                        </ToolTip.Tip>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Margin="5,10,0,0" />
+                    <TextBlock Margin="0,15,0,0" Text="Require sudo" />
+                    <Button
+                        BorderBrush="Transparent"
+                        Classes="outline"
+                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
+                        Margin="20,10,0,0"
+                        ToolTip.Placement="RightEdgeAlignedTop">
+                        <ToolTip.Tip>
+                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                <icons:MaterialIcon Kind="Help" />
+                                <TextBlock Margin="0,4,0,0">Runs application with super user rights</TextBlock>
+                            </StackPanel>
+                        </ToolTip.Tip>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox IsChecked="True" Margin="5,10,0,0" />
+                    <TextBlock Margin="0,15,0,0" Text="Display in menu" />
+                    <Button
+                        BorderBrush="Transparent"
+                        Classes="outline"
+                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
+                        Margin="20,10,0,0"
+                        ToolTip.Placement="RightEdgeAlignedTop">
+                        <ToolTip.Tip>
+                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                <icons:MaterialIcon Kind="Help" />
+                                <TextBlock Margin="0,4,0,0">If unchecked, do not show in the menu</TextBlock>
+                            </StackPanel>
+                        </ToolTip.Tip>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding EnableLocalization}" Margin="5,10,0,0" />
+                    <TextBlock Margin="0,15,0,0" Text="Enable localization" />
+                    <Button
+                        BorderBrush="Transparent"
+                        Classes="outline"
+                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
+                        Margin="20,10,0,0"
+                        ToolTip.Placement="RightEdgeAlignedTop">
+                        <ToolTip.Tip>
+                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                <icons:MaterialIcon Kind="Help" />
+                                <TextBlock Margin="0,4,0,0">If checked, replace application name text box to new, with localization support</TextBlock>
+                            </StackPanel>
+                        </ToolTip.Tip>
+                    </Button>
+                </StackPanel>
+
+
+            </StackPanel>
+        </ScrollViewer>
+        <Grid Grid.Row="2" RowDefinitions="*, Auto">
+            <Button
+                Command="{Binding ChangeCodePopupVisibilityCommand}"
+                Content="{icons:MaterialIconExt Kind=Code}"
+                CornerRadius="30"
+                Grid.Row="1"
+                Height="{StaticResource ButtonSize}"
+                HorizontalAlignment="Right"
+                Margin="15"
+                Name="CodeButton"
+                Width="{StaticResource ButtonSize}" />
+            <Popup
+                Grid.Row="1"
+                Height="200"
+                IsLightDismissEnabled="True"
+                IsOpen="{Binding IsCodePopupVisible}"
+                Name="CodePopup"
+                Placement="Right"
+                PlacementTarget="{Binding ElementName=CodeButton}"
+                Width="300">
+                <Border BoxShadow="0 50 rgba(0,0,0,0.3)">
+                    <avaloniaEdit:TextEditor
+                        FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
+                        FontSize="16"
+                        Margin="-5,0,0,0"
+                        Name="Editor"
+                        ShowLineNumbers="True" />
+                </Border>
+
+            </Popup>
+
+        </Grid>
+    </Grid>
 </Window>

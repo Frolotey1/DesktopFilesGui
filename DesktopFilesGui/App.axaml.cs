@@ -5,11 +5,12 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
-using Autofac;
 using Avalonia.Markup.Xaml;
+using DesktopFilesGui.Models.Enums;
 using DesktopFilesGui.Services.ShellThemeLoader.Strategies;
 using DesktopFilesGui.ViewModels;
 using DesktopFilesGui.Views;
+using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
 namespace DesktopFilesGui;
@@ -44,10 +45,12 @@ public partial class App : Application
     
     private void ConfigureServices()
     {
-        var builder = new ContainerBuilder();
+        var services = new ServiceCollection();
         
-        builder.RegisterTypes(typeof(GNOMEThemeLoaderStrategy))
-            .AsImplementedInterfaces();
+        services
+            .AddKeyedSingleton<IBaseThemeLoaderStrategy, GNOMEThemeLoaderStrategy>(Shell.GNOME)
+            .AddSingleton<MainWindowViewModel>()
+            .AddSingleton<MainWindow>();
     }
     
     private void ConfigureSerilog()
