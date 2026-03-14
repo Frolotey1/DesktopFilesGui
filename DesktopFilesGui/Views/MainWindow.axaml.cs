@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using AvaloniaEdit;
 using AvaloniaEdit.Editing;
 using AvaloniaEdit.TextMate;
@@ -28,5 +29,10 @@ Name=Test
 Icon=/Path/To/Tests
 Terminal=False
 """;
+    }
+
+    private void CloseApp(object? sender, RoutedEventArgs e)
+    {
+        this.Close();
     }
 }

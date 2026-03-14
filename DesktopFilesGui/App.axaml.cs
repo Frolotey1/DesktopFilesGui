@@ -6,8 +6,6 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
-using DesktopFilesGui.Models.Enums;
-using DesktopFilesGui.Services.ShellThemeLoader.Strategies;
 using DesktopFilesGui.ViewModels;
 using DesktopFilesGui.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,9 +15,7 @@ namespace DesktopFilesGui;
 
 public partial class App : Application
 {
-    private const string SERILOG_OUTPUT_TEMPLATE = "[{Timestamp:HH:mm:ss} {Level}] [Thread: {Thread}] {Message:lj}{NewLine}{Exception}";
-    private static readonly string APPLICATION_DATA = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DesktopFilesGui");
-    
+   
     public override void Initialize()
     {
         ConfigureSerilog();
@@ -48,7 +44,6 @@ public partial class App : Application
         var services = new ServiceCollection();
         
         services
-            .AddKeyedSingleton<IBaseThemeLoaderStrategy, GNOMEThemeLoaderStrategy>(Shell.GNOME)
             .AddSingleton<MainWindowViewModel>()
             .AddSingleton<MainWindow>();
     }
@@ -56,11 +51,11 @@ public partial class App : Application
     private void ConfigureSerilog()
     {
         Log.Logger = new LoggerConfiguration()
-            .WriteTo.Console(outputTemplate: SERILOG_OUTPUT_TEMPLATE)
+            .WriteTo.Console(outputTemplate: Configuration.SERILOG_OUTPUT_TEMPLATE)
             .WriteTo.File(
-                outputTemplate: SERILOG_OUTPUT_TEMPLATE, 
+                outputTemplate:  Configuration.SERILOG_OUTPUT_TEMPLATE, 
                 rollingInterval: RollingInterval.Day, 
-                path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logs"))
+                path: Path.Combine(Configuration.APPLICATION_DATA, "logs"))
             .Enrich.WithThreadId()
             .CreateLogger();
     }

@@ -8,7 +8,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <AvaloniaResource Include="Assets\**"/>
+        <AvaloniaResource Include="Content\Flags\**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </AvaloniaResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -34,6 +36,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Assets\Flags\" />
+      <Folder Include="Services\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\Flags\USA.png" />
+      <Content Include="Assets\Flags\USA.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 </Project>
