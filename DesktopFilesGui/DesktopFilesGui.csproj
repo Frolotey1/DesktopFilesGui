@@ -44,5 +44,17 @@
       <Content Include="Assets\Flags\USA.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Assets\Flags\ireland (1).png" />
+      <Content Include="Assets\Flags\ireland (1).png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Flags\brazil-.png" />
+      <AvaloniaResource Include="Assets\Flags\brazil-.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="Assets\Flags\uk.png" />
+      <Content Include="Assets\Flags\uk.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 </Project>

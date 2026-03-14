@@ -4,57 +4,25 @@
     MaxWidth="400"
     MinHeight="100"
     MinWidth="80"
-    Name="MainView"
     Title="DesktopFilesGui"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
-    mc:Ignorable="d"
     x:Class="DesktopFilesGui.Views.MainWindow"
     x:DataType="vm:MainWindowViewModel"
     xmlns="https://github.com/avaloniaui"
     xmlns:avaloniaEdit="https://github.com/avaloniaui/avaloniaedit"
+    xmlns:controls="clr-namespace:DesktopFilesGui.Controls"
     xmlns:converters="clr-namespace:DesktopFilesGui.Converters"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:generic="clr-namespace:System.Collections.Generic;assembly=System.Collections"
     xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:models="clr-namespace:DesktopFilesGui.Models"
-    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:vm="using:DesktopFilesGui.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Design.DataContext>
-        <!--
-            This only sets the DataContext for the previewer in an IDE,
-            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
-        -->
-        <vm:MainWindowViewModel />
-    </Design.DataContext>
-
     <Window.Resources>
-        <system:Double x:Key="TextBoxWidth">300</system:Double>
-        <system:Double x:Key="ButtonSize">50</system:Double>
-        <system:Double x:Key="IconWidth">20</system:Double>
-
-        <generic:List x:Key="Countries" x:TypeArguments="models:CountryInfo">
-            <models:CountryInfo IconPath="avares://./Assets/Flags/USA.png" Key="us" />
-            <models:CountryInfo IconPath="/Assets/Flags/brazil-.png" Key="us" />
-            <models:CountryInfo IconPath="Assets/Flags/canada.png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/china.png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/france.png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/germany.png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/japan.png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/norway.png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/russia.png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/uk.png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/ireland (1).png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/italy.png" Key="us" />
-            <models:CountryInfo IconPath="./Assets/Flags/korea.png" Key="us" />
-        </generic:List>
-
+        <sys:Double x:Key="TextBoxWidth">300</sys:Double>
+        <sys:Double x:Key="ButtonSize">50</sys:Double>
+        <sys:Double x:Key="IconWidth">20</sys:Double>
     </Window.Resources>
 
-    <Grid RowDefinitions="Auto, *, Auto">
+    <Grid RowDefinitions="Auto,*,Auto">
         <Menu Grid.Row="0">
             <MenuItem Header="Open">
                 <MenuItem Header="Open desktop files in 'Files'" Icon="{icons:MaterialIconExt Kind=Files}" />
@@ -70,11 +38,12 @@
             </MenuItem>
             <MenuItem Header="Themes" Icon="{icons:MaterialIconExt Kind=Theme}" />
         </Menu>
+
         <ScrollViewer Grid.Row="1" Margin="5,0,0,0">
             <StackPanel>
-
                 <TextBlock Margin="0,15,0,0" Text="Main configuration" />
 
+                <!--  Main inputs  -->
                 <StackPanel Orientation="Horizontal">
                     <icons:MaterialIcon
                         Kind="Rename"
@@ -82,6 +51,7 @@
                         Width="{StaticResource IconWidth}" />
                     <TextBox Watermark="Desktop file name" Width="{StaticResource TextBoxWidth}" />
                 </StackPanel>
+
                 <StackPanel Orientation="Horizontal">
                     <icons:MaterialIcon
                         Kind="File"
@@ -94,6 +64,7 @@
                         Margin="5,0,10,0"
                         Width="{StaticResource ButtonSize}" />
                 </StackPanel>
+
                 <StackPanel Orientation="Horizontal">
                     <icons:MaterialIcon
                         Kind="ImageAdd"
@@ -110,249 +81,53 @@
                 <Separator />
                 <TextBlock Margin="0,15,0,0" Text="Boolean configuration" />
 
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox Margin="5,10,0,0" />
-                    <TextBlock Margin="0,15,0,0" Text="Show terminal" />
-                    <Button
-                        BorderBrush="Transparent"
-                        Classes="outline"
-                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
-                        Margin="20,10,0,0"
-                        ToolTip.Placement="RightEdgeAlignedTop">
-                        <ToolTip.Tip>
-                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                <icons:MaterialIcon Kind="Help" />
-                                <TextBlock Margin="0,4,0,0">Allows terminal to appear after application start</TextBlock>
-                            </StackPanel>
-                        </ToolTip.Tip>
-                    </Button>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox Margin="5,10,0,0" />
-                    <TextBlock Margin="0,15,0,0" Text="Require sudo" />
-                    <Button
-                        BorderBrush="Transparent"
-                        Classes="outline"
-                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
-                        Margin="20,10,0,0"
-                        ToolTip.Placement="RightEdgeAlignedTop">
-                        <ToolTip.Tip>
-                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                <icons:MaterialIcon Kind="Help" />
-                                <TextBlock Margin="0,4,0,0">Runs application with super user rights</TextBlock>
-                            </StackPanel>
-                        </ToolTip.Tip>
-                    </Button>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox IsChecked="True" Margin="5,10,0,0" />
-                    <TextBlock Margin="0,15,0,0" Text="Display in menu" />
-                    <Button
-                        BorderBrush="Transparent"
-                        Classes="outline"
-                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
-                        Margin="20,10,0,0"
-                        ToolTip.Placement="RightEdgeAlignedTop">
-                        <ToolTip.Tip>
-                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                <icons:MaterialIcon Kind="Help" />
-                                <TextBlock Margin="0,4,0,0">If unchecked, do not show in the menu</TextBlock>
-                            </StackPanel>
-                        </ToolTip.Tip>
-                    </Button>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox IsChecked="{Binding EnableLocalization}" Margin="5,10,0,0" />
-                    <TextBlock Margin="0,15,0,0" Text="Enable localization" />
-                    <Button
-                        BorderBrush="Transparent"
-                        Classes="outline"
-                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
-                        Margin="20,10,0,0"
-                        ToolTip.Placement="RightEdgeAlignedTop">
-                        <ToolTip.Tip>
-                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                <icons:MaterialIcon Kind="Help" />
-                                <TextBlock Margin="0,4,0,0">If checked, replace application name text box to new, with localization support</TextBlock>
-                            </StackPanel>
-                        </ToolTip.Tip>
-                    </Button>
-                </StackPanel>
+
+                <controls:CheckBoxWithHelp Content="Show terminal" ToolTip="Allows terminal to appear after application start" />
+                <controls:CheckBoxWithHelp Content="Require sudo" ToolTip="Runs application with super user rights" />
+                <controls:CheckBoxWithHelp
+                    Content="Display in menu"
+                    IsChecked="True"
+                    ToolTip="If unchecked, do not show in the menu" />
+                <controls:CheckBoxWithHelp
+                    Content="Enable localization"
+                    IsChecked="{Binding EnableLocalization}"
+                    ToolTip="If checked, replace application name text box to new, with localization support" />
 
                 <Separator />
                 <TextBlock Margin="0,15,0,0" Text="Localizable configuration" />
 
-                <StackPanel IsVisible="{Binding EnableLocalization, Converter={converters:ReverseBooleanConverter}}" Orientation="Horizontal">
-                    <icons:MaterialIcon
-                        Kind="Application"
-                        Margin="5,0,10,0"
-                        Width="{StaticResource IconWidth}" />
-                    <TextBox Watermark="Application name" Width="{StaticResource TextBoxWidth}" />
-                </StackPanel>
+                <controls:LocalizableField
+                    EnableLocalization="{Binding EnableLocalization}"
+                    Icon="Application"
+                    Watermark="Application name" />
 
-                <StackPanel IsVisible="{Binding EnableLocalization}" Orientation="Horizontal">
-                    <ComboBox
-                        Height="30"
-                        ItemsSource="{StaticResource Countries}"
-                        Width="30">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate DataType="models:CountryInfo">
-                                <Image
-                                    Height="30"
-                                    Source="{Binding IconPath}"
-                                    Width="30" />
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
-                    <TextBox Watermark="Application name" Width="{StaticResource TextBoxWidth}" />
-                </StackPanel>
+                <controls:LocalizableField
+                    EnableLocalization="{Binding EnableLocalization}"
+                    Icon="CommentAdd"
+                    Watermark="Comment" />
 
-                <StackPanel IsVisible="{Binding EnableLocalization, Converter={converters:ReverseBooleanConverter}}" Orientation="Horizontal">
-                    <icons:MaterialIcon
-                        Kind="CommentAdd"
-                        Margin="5,0,10,0"
-                        Width="{StaticResource IconWidth}" />
-                    <TextBox Watermark="Comment" Width="{StaticResource TextBoxWidth}" />
-                </StackPanel>
+                <controls:LocalizableField
+                    EnableLocalization="{Binding EnableLocalization}"
+                    Icon="FileWord"
+                    Watermark="Keywords (';' divided)" />
 
-                <StackPanel IsVisible="{Binding EnableLocalization}" Orientation="Horizontal">
-                    <ComboBox
-                        Height="30"
-                        ItemsSource="{StaticResource Countries}"
-                        Width="30">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate DataType="models:CountryInfo">
-                                <Image
-                                    Height="30"
-                                    Source="{Binding IconPath}"
-                                    Width="30" />
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
-                    <TextBox Watermark="Comment" Width="{StaticResource TextBoxWidth}" />
-                </StackPanel>
-                <StackPanel IsVisible="{Binding EnableLocalization, Converter={converters:ReverseBooleanConverter}}" Orientation="Horizontal">
-                    <icons:MaterialIcon
-                        Kind="FileWord"
-                        Margin="5,0,10,0"
-                        Width="{StaticResource IconWidth}" />
-                    <TextBox Watermark="Keywords (';' divided)" Width="{StaticResource TextBoxWidth}" />
-                </StackPanel>
-
-                <StackPanel IsVisible="{Binding EnableLocalization}" Orientation="Horizontal">
-                    <ComboBox
-                        Height="30"
-                        ItemsSource="{StaticResource Countries}"
-                        Width="30">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate DataType="models:CountryInfo">
-                                <Image
-                                    Height="30"
-                                    Source="{Binding IconPath}"
-                                    Width="30" />
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
-                    <TextBox Watermark="Keywords (';' divided)" Width="{StaticResource TextBoxWidth}" />
-                </StackPanel>
-                <StackPanel IsVisible="{Binding EnableLocalization, Converter={converters:ReverseBooleanConverter}}" Orientation="Horizontal">
-                    <icons:MaterialIcon
-                        Kind="ImageDescription"
-                        Margin="5,0,10,0"
-                        Width="{StaticResource IconWidth}" />
-                    <TextBox Watermark="Description" Width="{StaticResource TextBoxWidth}" />
-                </StackPanel>
-
-                <StackPanel IsVisible="{Binding EnableLocalization}" Orientation="Horizontal">
-                    <ComboBox
-                        Height="30"
-                        ItemsSource="{StaticResource Countries}"
-                        Width="30">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate DataType="models:CountryInfo">
-                                <Image
-                                    Height="30"
-                                    Source="{Binding IconPath}"
-                                    Width="30" />
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
-                    <TextBox Watermark="Description" Width="{StaticResource TextBoxWidth}" />
-                </StackPanel>
+                <controls:LocalizableField
+                    EnableLocalization="{Binding EnableLocalization}"
+                    Icon="ImageDescription"
+                    Watermark="Generic name" />
 
                 <Separator />
                 <TextBlock Margin="0,15,0,0" Text="Extended configuration" />
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox Margin="5,10,0,0" />
-                    <TextBlock Margin="0,15,0,0" Text="Is hidden" />
-                    <Button
-                        BorderBrush="Transparent"
-                        Classes="outline"
-                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
-                        Margin="20,10,0,0"
-                        ToolTip.Placement="RightEdgeAlignedTop">
-                        <ToolTip.Tip>
-                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                <icons:MaterialIcon Kind="Help" />
-                                <TextBlock Margin="0,4,0,0">Hide application in the menu (useful for application removements)</TextBlock>
-                            </StackPanel>
-                        </ToolTip.Tip>
-                    </Button>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox Margin="5,10,0,0" />
-                    <TextBlock Margin="0,15,0,0" Text="Is hidden" />
-                    <Button
-                        BorderBrush="Transparent"
-                        Classes="outline"
-                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
-                        Margin="20,10,0,0"
-                        ToolTip.Placement="RightEdgeAlignedTop">
-                        <ToolTip.Tip>
-                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                <icons:MaterialIcon Kind="Help" />
-                                <TextBlock Margin="0,4,0,0">Hide application in the menu (useful for application removements)</TextBlock>
-                            </StackPanel>
-                        </ToolTip.Tip>
-                    </Button>
-                </StackPanel>
+
+                <controls:CheckBoxWithHelp Content="Is hidden" ToolTip="Hide application in the menu (useful if application is removed)" />
 
                 <Separator />
                 <TextBlock Margin="0,15,0,0" Text="Professional configuration" />
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox Margin="5,10,0,0" />
-                    <TextBlock Margin="0,15,0,0" Text="Run from D-BUS" />
-                    <Button
-                        BorderBrush="Transparent"
-                        Classes="outline"
-                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
-                        Margin="20,10,0,0"
-                        ToolTip.Placement="RightEdgeAlignedTop">
-                        <ToolTip.Tip>
-                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                <icons:MaterialIcon Kind="Help" />
-                                <TextBlock Margin="0,4,0,0">Mark that application will be run from D-BUS</TextBlock>
-                            </StackPanel>
-                        </ToolTip.Tip>
-                    </Button>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox Margin="5,10,0,0" />
-                    <TextBlock Margin="0,15,0,0" Text="Startup notify" />
-                    <Button
-                        BorderBrush="Transparent"
-                        Classes="outline"
-                        Content="{icons:MaterialIconExt Kind=QuestionMark}"
-                        Margin="20,10,0,0"
-                        ToolTip.Placement="RightEdgeAlignedTop">
-                        <ToolTip.Tip>
-                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                <icons:MaterialIcon Kind="Help" />
-                                <TextBlock Margin="0,4,0,0">Mark that application support startup notifications</TextBlock>
-                            </StackPanel>
-                        </ToolTip.Tip>
-                    </Button>
-                </StackPanel>
+
+                <controls:CheckBoxWithHelp Content="Run from D-BUS" ToolTip="Mark that application will be run from D-BUS" />
+                <controls:CheckBoxWithHelp Content="Startup notify support" ToolTip="Mark that application support startup notifications" />
+                <controls:CheckBoxWithHelp Content="Custom 'exec' command" ToolTip="Allows user write custom 'exec' command to run application" />
+
                 <StackPanel Orientation="Horizontal">
                     <icons:MaterialIcon
                         Kind="Files"
@@ -362,7 +137,8 @@
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
-        <Grid Grid.Row="2" RowDefinitions="*, Auto">
+
+        <Grid Grid.Row="2" RowDefinitions="*,Auto">
             <Button
                 Command="{Binding ChangeCodePopupVisibilityCommand}"
                 Content="{icons:MaterialIconExt Kind=Code}"
@@ -371,17 +147,17 @@
                 Height="{StaticResource ButtonSize}"
                 HorizontalAlignment="Right"
                 Margin="15"
-                Name="CodeButton"
-                Width="{StaticResource ButtonSize}" />
+                Width="{StaticResource ButtonSize}"
+                x:Name="CodeButton" />
             <Popup
                 Grid.Row="1"
                 Height="200"
                 IsLightDismissEnabled="True"
                 IsOpen="{Binding IsCodePopupVisible}"
-                Name="CodePopup"
                 Placement="Right"
                 PlacementTarget="{Binding ElementName=CodeButton}"
-                Width="300">
+                Width="300"
+                x:Name="CodePopup">
                 <Border BoxShadow="0 50 rgba(0,0,0,0.3)">
                     <avaloniaEdit:TextEditor
                         FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
@@ -391,9 +167,7 @@
                         Name="Editor"
                         ShowLineNumbers="True" />
                 </Border>
-
             </Popup>
-
         </Grid>
     </Grid>
 </Window>
