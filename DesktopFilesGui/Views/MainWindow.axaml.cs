@@ -1,7 +1,10 @@
 using System;
+using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.LogicalTree;
+using Avalonia.Platform.Storage;
 using AvaloniaEdit;
 using AvaloniaEdit.Editing;
 using AvaloniaEdit.TextMate;
@@ -41,5 +44,42 @@ public partial class MainWindow : Window
             combobox.Items.Add(value);
         }
     }
+
+    private async void SelectFile(object? sender, RoutedEventArgs e)
+    {
+        var textBox = GetTextBoxFromSearchButton(sender);
+        var topLevel = GetTopLevel(this);
+
+        if(topLevel is null)
+            throw new InvalidOperationException("Could not find TopLevel");
+        
+        var files = await topLevel.StorageProvider.OpenFilePickerAsync(new(){AllowMultiple = false});
+        if (files.Any())
+            textBox.Text = files.First().TryGetLocalPath();
+    }   
     
+    private async void SelectDirectory(object? sender, RoutedEventArgs e)
+    {
+        var textBox = GetTextBoxFromSearchButton(sender);
+        var topLevel = GetTopLevel(this);
+
+        if(topLevel is null)
+            throw new InvalidOperationException("Could not find TopLevel");
+        
+        var directories = await topLevel.StorageProvider.OpenFolderPickerAsync(new(){AllowMultiple = false});
+        if (directories.Any())
+            textBox.Text = directories.First().TryGetLocalPath()!;
+    }   
+
+    private TextBox GetTextBoxFromSearchButton(object? sender)
+    {
+        var button = (Button)sender;
+        var parent = button.GetLogicalParent();
+        var textBox = parent?.GetLogicalChildren().First(child => child is TextBox) as TextBox;
+        
+        if(textBox is null)
+            throw new InvalidOperationException("Could not find TextBox");
+        
+        return textBox;
+    }
 }

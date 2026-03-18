@@ -79,7 +79,7 @@
 
                 <StackPanel Orientation="Horizontal">
                     <icons:MaterialIcon
-                        Kind="FileTextAdd"
+                        Kind="Folder"
                         Margin="5,0,10,0"
                         Width="{StaticResource IconWidth}" />
                     <TextBox
@@ -87,6 +87,7 @@
                         Watermark="Path to file"
                         Width="{StaticResource TextBoxWidth}" />
                     <Button
+                        Click="SelectDirectory"
                         Content="{icons:MaterialIconExt Kind=Search}"
                         Height="{StaticResource ButtonSize}"
                         Margin="5,0,10,0"
@@ -101,10 +102,11 @@
                         Margin="5,0,10,0"
                         Width="{StaticResource IconWidth}" />
                     <TextBox
-                        Text="{Binding PathToIcon}"
+                        Text="{Binding PathToIcon, Mode=TwoWay}"
                         Watermark="Path to icon"
                         Width="{StaticResource TextBoxWidth}" />
                     <Button
+                        Click="SelectFile"
                         Content="{icons:MaterialIconExt Kind=Search}"
                         Height="{StaticResource ButtonSize}"
                         Margin="5,0,10,0"

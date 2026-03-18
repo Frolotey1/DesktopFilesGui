@@ -17,12 +17,26 @@ namespace DesktopFilesGui.ViewModels;
 public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener, IDesktopFileGenerator desktopFileGenerator) : ViewModelBase
 {
     [ObservableProperty] private bool _isCodePopupVisible = false;
-    [ObservableProperty] private string? _fileName;
+    
+    [ObservableProperty]
+    [NotifyDataErrorInfo]
+    [FileNotExists(directoryProperty: nameof(PathToFile), extension: ".desktop")]
+    private string? _fileName;
+    
     [ObservableProperty] private string? _applicationName;
     [ObservableProperty] private bool _enableLocalization;
     [ObservableProperty] private DesktopFileType _selectedFileType = Configuration.DEFAULT_DESKTOP_FILE_TYPE;
-    [ObservableProperty] private string? _pathToFile;
-    [ObservableProperty] private string? _pathToIcon;
+    
+    [ObservableProperty]
+    [DirectoryExists]
+    [NotifyDataErrorInfo]
+    private string? _pathToFile = Configuration.DEFAULT_DESKTOP_FILE_PATH;
+   
+    [ObservableProperty]
+    [FileExists()]
+    [NotifyDataErrorInfo] 
+    private string? _pathToIcon;
+   
     [ObservableProperty] private bool _showTerminal;           
     [ObservableProperty] private bool _requireSudo;            
     [ObservableProperty] private bool _displayInMenu = true;   

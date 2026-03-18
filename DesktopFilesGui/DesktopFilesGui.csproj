@@ -4,8 +4,28 @@
         <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+        <LangVersion>14</LangVersion>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <TrimMode>full</TrimMode>
+        <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+        <IlcOptimizationPreference>Size</IlcOptimizationPreference>
+        <IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies>
+        <JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault>
     </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <SelfContained>true</SelfContained>
+        <PublishSingleFile>true</PublishSingleFile>
+        <PublishTrimmed>true</PublishTrimmed>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
+        <TrimmerRootAssembly Include="Avalonia.Themes.Simple" />
+    </ItemGroup>
 
     <ItemGroup>
         <AvaloniaResource Include="Content\Flags\**">
@@ -13,35 +33,35 @@
         </AvaloniaResource>
         <None Remove="Assets\Flags\russia.png" />
         <AvaloniaResource Include="Assets\Flags\russia.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AvaloniaResource>
         <None Remove="Assets\Flags\norway.png" />
         <AvaloniaResource Include="Assets\Flags\norway.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AvaloniaResource>
         <None Remove="Assets\Flags\korea.png" />
         <AvaloniaResource Include="Assets\Flags\korea.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AvaloniaResource>
         <None Remove="Assets\Flags\japan.png" />
         <AvaloniaResource Include="Assets\Flags\japan.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AvaloniaResource>
         <None Remove="Assets\Flags\germany.png" />
         <AvaloniaResource Include="Assets\Flags\germany.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AvaloniaResource>
         <None Remove="Assets\Flags\france.png" />
         <AvaloniaResource Include="Assets\Flags\france.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AvaloniaResource>
         <None Remove="Assets\Flags\china.png" />
         <AvaloniaResource Include="Assets\Flags\china.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AvaloniaResource>
         <None Remove="Assets\Flags\canada.png" />
         <AvaloniaResource Include="Assets\Flags\canada.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AvaloniaResource>
     </ItemGroup>
 
@@ -51,10 +71,8 @@
         <PackageReference Include="Avalonia.Desktop" Version="11.3.12"/>
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.12"/>
         <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.12"/>
-        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.3.12">
-            <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
-            <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.3.12">
+            <PrivateAssets>All</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.3.0.6" />
         <PackageReference Include="AvaloniaEdit.TextMate" Version="11.4.1" />
@@ -71,33 +89,33 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Assets\Flags\USA.png" />
-      <AvaloniaResource Include="Assets\Flags\USA.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </AvaloniaResource>
-      <None Remove="Assets\Flags\ireland (1).png" />
-      <AvaloniaResource Include="Assets\Flags\ireland (1).png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </AvaloniaResource>
-      <None Remove="Assets\Flags\brazil-.png" />
-      <AvaloniaResource Include="Assets\Flags\brazil-.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </AvaloniaResource>
-      <None Remove="Assets\Flags\uk.png" />
-      <AvaloniaResource Include="Assets\Flags\uk.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </AvaloniaResource>
-      <None Remove="Assets\Flags\italy.png" />
-      <AvaloniaResource Include="Assets\Flags\italy.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </AvaloniaResource>
+        <None Remove="Assets\Flags\USA.png" />
+        <AvaloniaResource Include="Assets\Flags\USA.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </AvaloniaResource>
+        <None Remove="Assets\Flags\ireland (1).png" />
+        <AvaloniaResource Include="Assets\Flags\ireland (1).png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </AvaloniaResource>
+        <None Remove="Assets\Flags\brazil-.png" />
+        <AvaloniaResource Include="Assets\Flags\brazil-.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </AvaloniaResource>
+        <None Remove="Assets\Flags\uk.png" />
+        <AvaloniaResource Include="Assets\Flags\uk.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </AvaloniaResource>
+        <None Remove="Assets\Flags\italy.png" />
+        <AvaloniaResource Include="Assets\Flags\italy.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </AvaloniaResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Behaviors\" />
+        <Folder Include="Behaviors\" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="desktop.xml" />
+        <None Remove="desktop.xml" />
     </ItemGroup>
 </Project>
