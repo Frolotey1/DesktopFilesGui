@@ -2,16 +2,19 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
+using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using DesktopFilesGui.DataAnnotation;
 using DesktopFilesGui.Models;
 using DesktopFilesGui.Models.Enums;
 using DesktopFilesGui.Services.Interfaces;
 
 namespace DesktopFilesGui.ViewModels;
 
-public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener) : ViewModelBase
+public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener, IDesktopFileGenerator desktopFileGenerator) : ViewModelBase
 {
     [ObservableProperty] private bool _isCodePopupVisible = false;
     [ObservableProperty] private string? _fileName;
@@ -26,11 +29,13 @@ public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener)
     [ObservableProperty] private bool _isHidden;             
     [ObservableProperty] private bool _runFromDBus;           
     [ObservableProperty] private bool _startupNotifySupport;   
-    [ObservableProperty] private bool _customExecCommand;      
-    [ObservableProperty] private ObservableCollection<string> _supportedMimeTypes = new();
+    [ObservableProperty] private bool _useCustomExecCommand;      
+    [ObservableProperty] private ObservableCollection<StringViewModel> _supportedMimeTypes = new();
+    [ObservableProperty] private string _code = string.Empty;
 
     private bool _mustUpdateDesktopFile = true;
     private DesktopFile? _desktopFile;
+    private SemaphoreSlim semaphoreSlim = new(1, 1);
 
     protected override void OnPropertyChanged(PropertyChangedEventArgs e)
     {
@@ -39,19 +44,21 @@ public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener)
     }
 
     [RelayCommand]
-    private void ChangeCodePopupVisibility()
+    private async Task ChangeCodePopupVisibilityAsync()
     {
         if (!IsCodePopupVisible && _mustUpdateDesktopFile)
-        {
-            UpdateDesktopFile();
-        }
+            await UpdateDesktopFileAsync();
         IsCodePopupVisible = !IsCodePopupVisible;
     }
 
     [RelayCommand]
     private void AddMimeType()
     {
-        SupportedMimeTypes.Add("application/json");
+        SupportedMimeTypes.Add(new StringViewModel()
+        {
+            Value = null,
+            DynamicValidation = [new IsMimeAttribute()]
+        });
     }
 
     [RelayCommand]
@@ -64,11 +71,30 @@ public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener)
     [RelayCommand]
     private void ClearMimeTypes()
     {
-        Console.WriteLine(string.Join(",", SupportedMimeTypes));
+        Console.WriteLine(string.Join(",", SupportedMimeTypes.Select(s => s.Value)));
         SupportedMimeTypes.Clear();
     }
+
+    [RelayCommand]
+    private void ReorderMimeTypes(Tuple<int, int> indexesToSwap)
+    {
+       ArgumentNullException.ThrowIfNull(indexesToSwap);
+       ArgumentOutOfRangeException.ThrowIfGreaterThan(indexesToSwap.Item1, SupportedMimeTypes.Count);
+       ArgumentOutOfRangeException.ThrowIfGreaterThan(indexesToSwap.Item2, SupportedMimeTypes.Count);
+       ArgumentOutOfRangeException.ThrowIfNegative(indexesToSwap.Item1);
+       ArgumentOutOfRangeException.ThrowIfNegative(indexesToSwap.Item2);
+       
+       var item = SupportedMimeTypes[indexesToSwap.Item1];
+       SupportedMimeTypes.RemoveAt(indexesToSwap.Item1);
+       
+       if (indexesToSwap.Item2 > indexesToSwap.Item1)
+           SupportedMimeTypes.Insert(indexesToSwap.Item2 - 1, item);
+       else
+          SupportedMimeTypes.Insert(indexesToSwap.Item2, item);
+       
+    }
     
-    private void UpdateDesktopFile()
+    private async Task UpdateDesktopFileAsync()
     {
         _mustUpdateDesktopFile = false;
         _desktopFile = new DesktopFile
@@ -81,7 +107,14 @@ public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener)
             IsHidden = IsHidden,
             RunFromDBus = RunFromDBus,
             StartupNotifySupport = StartupNotifySupport,
-            CustomExecCommand = CustomExecCommand
+            UseCustomExecCommand = UseCustomExecCommand,
+            SupportedMimeTypes = SupportedMimeTypes.Select(stringViewModel => stringViewModel.Value)
         };
+        await semaphoreSlim.WaitAsync();
+        await Task.Run(async () =>
+        {
+            var result = desktopFileGenerator.Generate(_desktopFile);
+            await Dispatcher.UIThread.InvokeAsync(() => Code = result);
+        });
     }
 }

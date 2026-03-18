@@ -7,6 +7,7 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using DesktopFilesGui.Services;
 using DesktopFilesGui.Services.Interfaces;
 using DesktopFilesGui.ViewModels;
@@ -55,11 +56,13 @@ public partial class App : Application
             .AddSingleton<MainWindow>();
         
         _provider = services.BuildServiceProvider();
+        Ioc.Default.ConfigureServices(_provider);
     }
     
     private void ConfigureSerilog()
     {
         Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
             .WriteTo.Console(outputTemplate: Configuration.SERILOG_OUTPUT_TEMPLATE)
             .WriteTo.File(
                 outputTemplate:  Configuration.SERILOG_OUTPUT_TEMPLATE, 

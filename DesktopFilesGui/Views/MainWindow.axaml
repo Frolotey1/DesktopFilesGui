@@ -12,6 +12,8 @@
     xmlns:controls="clr-namespace:DesktopFilesGui.Controls"
     xmlns:converters="clr-namespace:DesktopFilesGui.Converters"
     xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+    xmlns:interactions="clr-namespace:Avalonia.Xaml.Interactions;assembly=Avalonia.Xaml.Interactions"
+    xmlns:interactivity="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
     xmlns:modelEnums="clr-namespace:DesktopFilesGui.Models.Enums"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:vm="using:DesktopFilesGui.ViewModels"
@@ -191,7 +193,7 @@
 
                 <controls:CheckBoxWithHelp
                     Content="Custom 'exec' command"
-                    IsChecked="{Binding CustomExecCommand}"
+                    IsChecked="{Binding UseCustomExecCommand}"
                     ToolTip="Allows user write custom 'exec' command to run application where {{PATH}} path to file" />
 
 
@@ -208,18 +210,18 @@
                         BorderThickness="3"
                         Height="150"
                         ItemsSource="{Binding SupportedMimeTypes}"
-                        Margin="5,15">
-
+                        Margin="5,15"
+                        Name="MimesControl">
 
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel Height="67" Orientation="Horizontal">
                                     <icons:MaterialIcon Kind="FileKey" />
                                     <TextBox
                                         BorderBrush="Transparent"
                                         HorizontalAlignment="Left"
                                         Margin="12,0,0,0"
-                                        Text="{Binding Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                         VerticalAlignment="Center"
                                         Width="{StaticResource TextBoxWidth}" />
                                 </StackPanel>
@@ -264,18 +266,18 @@
                 x:Name="CodeButton" />
             <Popup
                 Grid.Row="1"
-                Height="200"
+                Height="300"
                 IsLightDismissEnabled="True"
                 IsOpen="{Binding IsCodePopupVisible}"
                 Placement="Right"
                 PlacementTarget="{Binding ElementName=CodeButton}"
-                Width="300"
+                Width="400"
                 x:Name="CodePopup">
                 <Border BoxShadow="0 50 rgba(0,0,0,0.3)">
-                    <avaloniaEdit:TextEditor
+                    <controls:ReadOnlyTextEditor
+                        Code="{Binding Code}"
                         FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
                         FontSize="16"
-                        IsEnabled="False"
                         Margin="-5,0,0,0"
                         Name="Editor"
                         ShowLineNumbers="True" />

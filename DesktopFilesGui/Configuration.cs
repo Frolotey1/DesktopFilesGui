@@ -8,7 +8,7 @@ namespace DesktopFilesGui;
 
 public static class Configuration
 {
-    public const string SERILOG_OUTPUT_TEMPLATE = "[{Timestamp:HH:mm:ss} {Level}] [Thread: {Thread}] {Message:lj}{NewLine}{Exception}";
+    public const string SERILOG_OUTPUT_TEMPLATE = "[{Timestamp:HH:mm:ss} {Level}] [Thread: {ThreadId}] {Message:lj}{NewLine}{Exception}";
     public static readonly string APPLICATION_DATA = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DesktopFilesGui");
     public const string GITHUB_LINK = "https://github.com/TheMakarik/DesktopFilesGui";
     
@@ -20,15 +20,15 @@ public static class Configuration
     public const string DBUS_ACTIVATABLE_KEY = "DBusActivatable";
     public const string PATH_IN_EXEC_COMMAND = "{PATH}";
     public const string STARTUP_NOTIFY_KEY = "StartupNotify";
+    public const string MIME_TYPE_KEY = "MimeType";
     
     
     public const string DESKTOP_FILE_STARTING = @$"
 # This .desktop file powered by {nameof(DesktopFilesGui)}
-# It's extreamly useful application to create desktop files
+# It's extreamly useful application to create desktop files     
 # See more: {GITHUB_LINK}
 
-[Desktop Entry]
-";
+[Desktop Entry]";
     
     public static List<CountryInfo> Countries { get; } = new()
     {

@@ -13,5 +13,6 @@ public sealed class DesktopFile
     public bool IsHidden { get; set; }
     public bool RunFromDBus { get; set; }
     public bool StartupNotifySupport { get; set; }
-    public bool CustomExecCommand { get; set; }
+    public bool UseCustomExecCommand { get; set; }
+    public IEnumerable<string> SupportedMimeTypes { get; set; }
 }

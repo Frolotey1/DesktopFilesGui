@@ -1,14 +1,19 @@
+using System.Linq;
 using System.Text;
+using DesktopFilesGui.Extensions;
 using DesktopFilesGui.Models;
 using DesktopFilesGui.Services.Interfaces;
+using Serilog;
 
 namespace DesktopFilesGui.Services;
 
-public class DesktopFileGenerator : IDesktopFileGenerator
+public class DesktopFileGenerator(ILogger logger) : IDesktopFileGenerator
 {
     public string Generate(DesktopFile desktopFile)
     {
         var fileContentBuilder = new StringBuilder();
+        
+        logger.Debug($"Generating desktop file from: {desktopFile}...");
         
         fileContentBuilder
             .AppendLine(Configuration.DESKTOP_FILE_STARTING)
@@ -29,6 +34,13 @@ public class DesktopFileGenerator : IDesktopFileGenerator
                 .ToString()
                 .ToLower()}");
         
-        return fileContentBuilder.ToString();
+        if(desktopFile.SupportedMimeTypes.Any())
+            fileContentBuilder
+                .AppendLine($"{Configuration.MIME_TYPE_KEY}={desktopFile.SupportedMimeTypes
+                    .ToDesktopFileArray()}");
+        
+        var result = fileContentBuilder.ToString();
+        logger.Information("Generated .desktop file \n {code}", result);
+        return result;
     }
 }
