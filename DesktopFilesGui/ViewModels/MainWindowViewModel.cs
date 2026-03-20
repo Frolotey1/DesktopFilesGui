@@ -24,22 +24,27 @@ public partial class MainWindowViewModel(
     
     [ObservableProperty]
     [NotifyDataErrorInfo]
-    [FileNotExists(directoryProperty: nameof(PathToFile), extension: ".desktop")]
+    [FileNotExists(directoryProperty: nameof(PathToOutput), extension: ".desktop")]
     private string? _fileName;
     
     [ObservableProperty] private string? _applicationName;
     [ObservableProperty] private bool _enableLocalization;
     [ObservableProperty] private DesktopFileType _selectedFileType = Configuration.DEFAULT_DESKTOP_FILE_TYPE;
+
+    [ObservableProperty] 
+    [FileExists] 
+    [NotifyDataErrorInfo]
+    private string? _pathToRunFile;
+   
+    [ObservableProperty]
+    [FileExists]
+    [NotifyDataErrorInfo] 
+    private string? _pathToIcon;
     
     [ObservableProperty]
     [DirectoryExists]
     [NotifyDataErrorInfo]
-    private string? _pathToFile = Configuration.DEFAULT_DESKTOP_FILE_PATH;
-   
-    [ObservableProperty]
-    [FileExists()]
-    [NotifyDataErrorInfo] 
-    private string? _pathToIcon;
+    private string? _pathToOutput = Configuration.DEFAULT_DESKTOP_FILE_PATH;
    
     [ObservableProperty] private bool _showTerminal;           
     [ObservableProperty] private bool _requireSudo;            

@@ -17,6 +17,9 @@
 
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
         <SelfContained>true</SelfContained>
+        <PublishAot>true</PublishAot>
+        <TrimMode>partial</TrimMode>
+        <PublishTrimmed>true</PublishTrimmed>
         <DebugType>none</DebugType>
         <PublishSingleFile>true</PublishSingleFile>
     </PropertyGroup>
@@ -24,8 +27,6 @@
     <ItemGroup>
         <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
         <TrimmerRootAssembly Include="CommunityToolkit.Mvvm" />
-        <TrimmerRootAssembly Include="AvaloniaEdit" />
-        <TrimmerRootAssembly Include="AvaloniaEdit.TextMate" />
         <TrimmerRootAssembly Include="Material.Avalonia" />
         <TrimmerRootAssembly Include="Material.Styles" />
         <TrimmerRootAssembly Include="Material.Icons.Avalonia" />

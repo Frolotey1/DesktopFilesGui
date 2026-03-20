@@ -77,17 +77,17 @@
                 </StackPanel>
 
 
-                <StackPanel Orientation="Horizontal">
+                <StackPanel IsVisible="{Binding SelectedFileType, Converter={converters:DesktopFileTypeToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Application}'}" Orientation="Horizontal">
                     <icons:MaterialIcon
-                        Kind="Folder"
+                        Kind="File"
                         Margin="5,0,10,0"
                         Width="{StaticResource IconWidth}" />
                     <TextBox
-                        Text="{Binding PathToFile}"
+                        Text="{Binding PathToRunFile}"
                         Watermark="Path to file"
                         Width="{StaticResource TextBoxWidth}" />
                     <Button
-                        Click="SelectDirectory"
+                        Click="SelectFile"
                         Content="{icons:MaterialIconExt Kind=Search}"
                         Height="{StaticResource ButtonSize}"
                         Margin="5,0,10,0"
@@ -158,19 +158,18 @@
 
                 <StackPanel Orientation="Horizontal">
                     <icons:MaterialIcon
-                        IsEnabled="{Binding SelectedFileType, ConverterParameter='Application', Converter={converters:EnableIfDesktopFileTypeIsNotParameterType}}"
+                        IsEnabled="{Binding SelectedFileType, ConverterParameter='Application', Converter={converters:DesktopFileTypeToBooleanConverter}}"
                         Kind="FolderSearch"
                         Margin="5,0,10,0"
                         Width="{StaticResource IconWidth}" />
                     <TextBox
-                        IsEnabled="{Binding SelectedFileType, ConverterParameter='Application', Converter={converters:EnableIfDesktopFileTypeIsNotParameterType}}"
-                        Text="{Binding PathToFile}"
-                        Watermark="Execution location"
+                        Text="{Binding PathToOutput}"
+                        Watermark="Path to .desktop file"
                         Width="{StaticResource TextBoxWidth}" />
                     <Button
                         Content="{icons:MaterialIconExt Kind=Search}"
                         Height="{StaticResource ButtonSize}"
-                        IsEnabled="{Binding SelectedFileType, ConverterParameter='Application', Converter={converters:EnableIfDesktopFileTypeIsNotParameterType}}"
+                        IsEnabled="{Binding SelectedFileType, ConverterParameter='Application', Converter={converters:DesktopFileTypeToBooleanConverter}}"
                         Margin="5,0,10,0"
                         Width="{StaticResource ButtonSize}" />
                 </StackPanel>
