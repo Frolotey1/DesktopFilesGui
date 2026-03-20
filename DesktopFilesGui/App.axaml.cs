@@ -42,7 +42,7 @@ public partial class App : Application
         }
 
         await _provider.GetRequiredService<IExecutionTriggersJsonCreator>()
-            .CreateIfNotExistsAsync();
+            .EnsureCreatedAsync();
         
         base.OnFrameworkInitializationCompleted();
     }

@@ -4,5 +4,5 @@ namespace DesktopFilesGui.Services.Interfaces;
 
 public interface IExecutionTriggersJsonCreator
 {
-    public ValueTask CreateIfNotExistsAsync();
+    public ValueTask EnsureCreatedAsync();
 }

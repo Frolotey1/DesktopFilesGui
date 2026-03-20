@@ -10,7 +10,7 @@ namespace DesktopFilesGui.Services;
 
 public sealed class ExecutionTriggersJsonCreator(ILogger logger) : IExecutionTriggersJsonCreator
 {
-    public async ValueTask CreateIfNotExistsAsync()
+    public async ValueTask EnsureCreatedAsync()
     {
         if (File.Exists(Configuration.EXECUTION_TEMPLATES_JSON_PATH))
         {

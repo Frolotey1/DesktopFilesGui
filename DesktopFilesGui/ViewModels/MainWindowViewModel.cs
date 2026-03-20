@@ -11,10 +11,14 @@ using DesktopFilesGui.DataAnnotation;
 using DesktopFilesGui.Models;
 using DesktopFilesGui.Models.Enums;
 using DesktopFilesGui.Services.Interfaces;
+using Serilog;
 
 namespace DesktopFilesGui.ViewModels;
 
-public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener, IDesktopFileGenerator desktopFileGenerator) : ViewModelBase
+public partial class MainWindowViewModel(
+    ILogger logger,
+    IGithubSourceOpener githubSourceOpener, 
+    IDesktopFileGenerator desktopFileGenerator) : ViewModelBase
 {
     [ObservableProperty] private bool _isCodePopupVisible = false;
     
@@ -61,13 +65,25 @@ public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener,
     private async Task ChangeCodePopupVisibilityAsync()
     {
         if (!IsCodePopupVisible && _mustUpdateDesktopFile)
-            await UpdateDesktopFileAsync();
+        {
+            await semaphoreSlim.WaitAsync();
+            try
+            {
+                if (!IsCodePopupVisible && _mustUpdateDesktopFile)
+                    await UpdateDesktopFileAsync();
+            }
+            finally
+            {
+                semaphoreSlim.Release();
+            }
+        }
         IsCodePopupVisible = !IsCodePopupVisible;
     }
 
     [RelayCommand]
     private void AddMimeType()
     {
+        logger.Debug("Adding empty mime type");
         SupportedMimeTypes.Add(new StringViewModel()
         {
             Value = null,
@@ -85,27 +101,8 @@ public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener,
     [RelayCommand]
     private void ClearMimeTypes()
     {
-        Console.WriteLine(string.Join(",", SupportedMimeTypes.Select(s => s.Value)));
+        logger.Debug("Clearing mime types");
         SupportedMimeTypes.Clear();
-    }
-
-    [RelayCommand]
-    private void ReorderMimeTypes(Tuple<int, int> indexesToSwap)
-    {
-       ArgumentNullException.ThrowIfNull(indexesToSwap);
-       ArgumentOutOfRangeException.ThrowIfGreaterThan(indexesToSwap.Item1, SupportedMimeTypes.Count);
-       ArgumentOutOfRangeException.ThrowIfGreaterThan(indexesToSwap.Item2, SupportedMimeTypes.Count);
-       ArgumentOutOfRangeException.ThrowIfNegative(indexesToSwap.Item1);
-       ArgumentOutOfRangeException.ThrowIfNegative(indexesToSwap.Item2);
-       
-       var item = SupportedMimeTypes[indexesToSwap.Item1];
-       SupportedMimeTypes.RemoveAt(indexesToSwap.Item1);
-       
-       if (indexesToSwap.Item2 > indexesToSwap.Item1)
-           SupportedMimeTypes.Insert(indexesToSwap.Item2 - 1, item);
-       else
-          SupportedMimeTypes.Insert(indexesToSwap.Item2, item);
-       
     }
     
     private async Task UpdateDesktopFileAsync()
@@ -122,9 +119,11 @@ public partial class MainWindowViewModel(IGithubSourceOpener githubSourceOpener,
             RunFromDBus = RunFromDBus,
             StartupNotifySupport = StartupNotifySupport,
             UseCustomExecCommand = UseCustomExecCommand,
-            SupportedMimeTypes = SupportedMimeTypes.Select(stringViewModel => stringViewModel.Value)
+            SupportedMimeTypes = SupportedMimeTypes
+                .Where(stringViewModel => stringViewModel.Value is not null)
+                .Select(stringViewModel => stringViewModel.Value)
+                .Cast<string>()
         };
-        await semaphoreSlim.WaitAsync();
         await Task.Run(async () =>
         {
             var result = desktopFileGenerator.Generate(_desktopFile);

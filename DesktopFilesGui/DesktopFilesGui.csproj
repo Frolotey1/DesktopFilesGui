@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <OutputType>WinExe</OutputType>
+        <OutputType>Exe</OutputType>
         <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <LangVersion>14</LangVersion>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-        <TrimMode>full</TrimMode>
+        <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
         <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
         <InvariantGlobalization>true</InvariantGlobalization>
         <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
@@ -17,14 +17,20 @@
 
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
         <SelfContained>true</SelfContained>
+        <DebugType>none</DebugType>
         <PublishSingleFile>true</PublishSingleFile>
-        <PublishTrimmed>true</PublishTrimmed>
-        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     </PropertyGroup>
 
     <ItemGroup>
         <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
-        <TrimmerRootAssembly Include="Avalonia.Themes.Simple" />
+        <TrimmerRootAssembly Include="CommunityToolkit.Mvvm" />
+        <TrimmerRootAssembly Include="AvaloniaEdit" />
+        <TrimmerRootAssembly Include="AvaloniaEdit.TextMate" />
+        <TrimmerRootAssembly Include="Material.Avalonia" />
+        <TrimmerRootAssembly Include="Material.Styles" />
+        <TrimmerRootAssembly Include="Material.Icons.Avalonia" />
+        <TrimmerRootAssembly Include="MimeCheck" />
+        <TrimmerRootAssembly Include="$(TargetName)" />
     </ItemGroup>
 
     <ItemGroup>

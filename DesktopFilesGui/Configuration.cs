@@ -22,7 +22,7 @@ public static class Configuration
     public const string PATH_IN_EXEC_COMMAND = "{PATH}";
     public const string STARTUP_NOTIFY_KEY = "StartupNotify";
     public const string MIME_TYPE_KEY = "MimeType";
-    public static readonly string EXECUTION_TEMPLATES_JSON_PATH = $"{APPLICATION_DATA}/triggers.json";
+    public static readonly string EXECUTION_TEMPLATES_JSON_PATH = $"{APPLICATION_DATA}/templates.json";
 
     public static readonly TemplatesInfo DEFAULT_TEMPLATES_INFO = new()
     {
