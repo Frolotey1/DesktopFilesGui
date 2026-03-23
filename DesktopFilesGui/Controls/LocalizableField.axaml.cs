@@ -1,3 +1,4 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -42,5 +43,10 @@ public partial class LocalizableField : UserControl
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
+    }
+
+    private void CountryComboBox_OnDropDownOpened(object? sender, EventArgs e)
+    {
+        
     }
 }

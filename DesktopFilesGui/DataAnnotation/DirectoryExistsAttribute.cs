@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.IO;
+using Avalonia.Controls;
 
 namespace DesktopFilesGui.DataAnnotation;
 
@@ -12,7 +13,6 @@ public class DirectoryExistsAttribute : ValidationAttribute
 
         if (string.IsNullOrEmpty(path))
             return new ValidationResult("Path is empty");
-          
         
         if(Directory.Exists(path))
             return ValidationResult.Success;

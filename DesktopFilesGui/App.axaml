@@ -5,6 +5,7 @@
     xmlns:generic="clr-namespace:System.Collections.Generic;assembly=System.Collections"
     xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
     xmlns:models="clr-namespace:DesktopFilesGui.Models"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--  "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options.  -->
@@ -17,25 +18,18 @@
             SecondaryColor="MediumSeaGreen" />
         <materialIcons:MaterialIconStyles />
         <StyleInclude Source="avares://ThemeEditor.Controls.ColorPicker/ColorPicker.axaml" />
+        <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
         <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
+
+
     </Application.Styles>
 
     <Application.Resources>
-        <generic:List x:Key="Countries" x:TypeArguments="models:CountryInfo">
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/USA.png" Key="us" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/brazil-.png" Key="br" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/canada.png" Key="ca" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/china.png" Key="cn" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/france.png" Key="fr" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/germany.png" Key="de" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/japan.png" Key="jp" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/norway.png" Key="no" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/russia.png" Key="ru" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/uk.png" Key="gb" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/ireland (1).png" Key="ie" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/italy.png" Key="it" />
-            <models:CountryInfo IconPath="avares://DesktopFilesGui/Assets/Flags/korea.png" Key="kr" />
-        </generic:List>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="Countries.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 
 </Application>

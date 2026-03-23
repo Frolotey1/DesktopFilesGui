@@ -160,6 +160,7 @@ public partial class MainWindowViewModel : ViewModelBase
             HiddenInMenu = !DisplayInMenu,
             EnableLocalization = EnableLocalization,
             IsHidden = IsHidden,
+            Name = ApplicationName,
             RunFromDBus = RunFromDBus,
             StartupNotifySupport = StartupNotifySupport,
             SupportedMimeTypes = SupportedMimeTypes

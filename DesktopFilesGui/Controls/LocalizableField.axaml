@@ -22,14 +22,29 @@
             <ComboBox
                 Height="30"
                 ItemsSource="{StaticResource Countries}"
-                Width="30"
+                Width="70"
                 x:Name="CountryComboBox">
-                <ComboBox.ItemTemplate>
+
+                <ComboBox.SelectionBoxItemTemplate>
                     <DataTemplate DataType="models:CountryInfo">
                         <Image
                             Height="30"
+                            Margin="10,0,10,0"
                             Source="{Binding IconPath, Converter={converters:StringToImageConverter}}"
                             Width="30" />
+                    </DataTemplate>
+                </ComboBox.SelectionBoxItemTemplate>
+
+                <ComboBox.ItemTemplate>
+                    <DataTemplate DataType="models:CountryInfo">
+                        <StackPanel Orientation="Horizontal" Width="500">
+                            <Image
+                                Height="30"
+                                Margin="5,0,10,0"
+                                Source="{Binding IconPath, Converter={converters:StringToImageConverter}}"
+                                Width="30" />
+                            <Label Content="{Binding CountryName}" FontSize="17" />
+                        </StackPanel>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>

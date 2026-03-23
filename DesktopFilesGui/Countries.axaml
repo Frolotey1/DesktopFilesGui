@@ -1,0 +1,2190 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:generic="clr-namespace:System.Collections.Generic;assembly=System.Collections"
+    xmlns:models="clr-namespace:DesktopFilesGui.Models"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <generic:List x:Key="Countries" x:TypeArguments="models:CountryInfo">
+        <!--  Andorra  -->
+        <models:CountryInfo CountryName="Andorra (AD)" IconPath="avares://DesktopFilesGui/Assets/Flags/ad.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ca_AD</system:String>
+                    <system:String>es_ES</system:String>
+                    <system:String>fr_FR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  United Arab Emirates  -->
+        <models:CountryInfo CountryName="United Arab Emirates (AE)" IconPath="avares://DesktopFilesGui/Assets/Flags/ae.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_AE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Afghanistan  -->
+        <models:CountryInfo CountryName="Afghanistan (AF)" IconPath="avares://DesktopFilesGui/Assets/Flags/af.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ps_AF</system:String>
+                    <system:String>fa_AF</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Antigua and Barbuda  -->
+        <models:CountryInfo CountryName="Antigua and Barbuda (AG)" IconPath="avares://DesktopFilesGui/Assets/Flags/ag.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_AG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Anguilla  -->
+        <models:CountryInfo CountryName="Anguilla (AI)" IconPath="avares://DesktopFilesGui/Assets/Flags/ai.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_AI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Albania  -->
+        <models:CountryInfo CountryName="Albania (AL)" IconPath="avares://DesktopFilesGui/Assets/Flags/al.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sq_AL</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Armenia  -->
+        <models:CountryInfo CountryName="Armenia (AM)" IconPath="avares://DesktopFilesGui/Assets/Flags/am.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>hy_AM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Angola  -->
+        <models:CountryInfo CountryName="Angola (AO)" IconPath="avares://DesktopFilesGui/Assets/Flags/ao.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>pt_AO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Antarctica  -->
+        <models:CountryInfo CountryName="Antarctica (AQ)" IconPath="avares://DesktopFilesGui/Assets/Flags/aq.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_AQ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Argentina  -->
+        <models:CountryInfo CountryName="Argentina (AR)" IconPath="avares://DesktopFilesGui/Assets/Flags/ar.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_AR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  American Samoa  -->
+        <models:CountryInfo CountryName="American Samoa (AS)" IconPath="avares://DesktopFilesGui/Assets/Flags/as.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_AS</system:String>
+                    <system:String>sm_AS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Austria  -->
+        <models:CountryInfo CountryName="Austria (AT)" IconPath="avares://DesktopFilesGui/Assets/Flags/at.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>de_AT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Australia  -->
+        <models:CountryInfo CountryName="Australia (AU)" IconPath="avares://DesktopFilesGui/Assets/Flags/au.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_AU</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Aruba  -->
+        <models:CountryInfo CountryName="Aruba (AW)" IconPath="avares://DesktopFilesGui/Assets/Flags/aw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>nl_AW</system:String>
+                    <system:String>pap_AW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Åland Islands  -->
+        <models:CountryInfo CountryName="Åland Islands (AX)" IconPath="avares://DesktopFilesGui/Assets/Flags/ax.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sv_AX</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Azerbaijan  -->
+        <models:CountryInfo CountryName="Azerbaijan (AZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/az.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>az_AZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bosnia and Herzegovina  -->
+        <models:CountryInfo CountryName="Bosnia and Herzegovina (BA)" IconPath="avares://DesktopFilesGui/Assets/Flags/ba.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>bs_BA</system:String>
+                    <system:String>hr_BA</system:String>
+                    <system:String>sr_BA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Barbados  -->
+        <models:CountryInfo CountryName="Barbados (BB)" IconPath="avares://DesktopFilesGui/Assets/Flags/bb.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_BB</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bangladesh  -->
+        <models:CountryInfo CountryName="Bangladesh (BD)" IconPath="avares://DesktopFilesGui/Assets/Flags/bd.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>bn_BD</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Belgium  -->
+        <models:CountryInfo CountryName="Belgium (BE)" IconPath="avares://DesktopFilesGui/Assets/Flags/be.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>nl_BE</system:String>
+                    <system:String>fr_BE</system:String>
+                    <system:String>de_BE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Burkina Faso  -->
+        <models:CountryInfo CountryName="Burkina Faso (BF)" IconPath="avares://DesktopFilesGui/Assets/Flags/bf.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_BF</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bulgaria  -->
+        <models:CountryInfo CountryName="Bulgaria (BG)" IconPath="avares://DesktopFilesGui/Assets/Flags/bg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>bg_BG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bahrain  -->
+        <models:CountryInfo CountryName="Bahrain (BH)" IconPath="avares://DesktopFilesGui/Assets/Flags/bh.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_BH</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Burundi  -->
+        <models:CountryInfo CountryName="Burundi (BI)" IconPath="avares://DesktopFilesGui/Assets/Flags/bi.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_BI</system:String>
+                    <system:String>rn_BI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Benin  -->
+        <models:CountryInfo CountryName="Benin (BJ)" IconPath="avares://DesktopFilesGui/Assets/Flags/bj.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_BJ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Saint Barthélemy  -->
+        <models:CountryInfo CountryName="Saint Barthélemy (BL)" IconPath="avares://DesktopFilesGui/Assets/Flags/bl.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_BL</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bermuda  -->
+        <models:CountryInfo CountryName="Bermuda (BM)" IconPath="avares://DesktopFilesGui/Assets/Flags/bm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_BM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Brunei  -->
+        <models:CountryInfo CountryName="Brunei (BN)" IconPath="avares://DesktopFilesGui/Assets/Flags/bn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ms_BN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bolivia  -->
+        <models:CountryInfo CountryName="Bolivia (BO)" IconPath="avares://DesktopFilesGui/Assets/Flags/bo.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_BO</system:String>
+                    <system:String>qu_BO</system:String>
+                    <system:String>ay_BO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bonaire, Sint Eustatius and Saba  -->
+        <models:CountryInfo CountryName="Bonaire, Sint Eustatius and Saba (BQ)" IconPath="avares://DesktopFilesGui/Assets/Flags/bq.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>nl_BQ</system:String>
+                    <system:String>en_BQ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Brazil  -->
+        <models:CountryInfo CountryName="Brazil (BR)" IconPath="avares://DesktopFilesGui/Assets/Flags/br.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>pt_BR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bahamas  -->
+        <models:CountryInfo CountryName="Bahamas (BS)" IconPath="avares://DesktopFilesGui/Assets/Flags/bs.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_BS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bhutan  -->
+        <models:CountryInfo CountryName="Bhutan (BT)" IconPath="avares://DesktopFilesGui/Assets/Flags/bt.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>dz_BT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Bouvet Island  -->
+        <models:CountryInfo CountryName="Bouvet Island (BV)" IconPath="avares://DesktopFilesGui/Assets/Flags/bv.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>no_BV</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Botswana  -->
+        <models:CountryInfo CountryName="Botswana (BW)" IconPath="avares://DesktopFilesGui/Assets/Flags/bw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_BW</system:String>
+                    <system:String>tn_BW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Belarus  -->
+        <models:CountryInfo CountryName="Belarus (BY)" IconPath="avares://DesktopFilesGui/Assets/Flags/by.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>be_BY</system:String>
+                    <system:String>ru_BY</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Belize  -->
+        <models:CountryInfo CountryName="Belize (BZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/bz.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_BZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Canada  -->
+        <models:CountryInfo CountryName="Canada (CA)" IconPath="avares://DesktopFilesGui/Assets/Flags/ca.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_CA</system:String>
+                    <system:String>fr_CA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Cocos (Keeling) Islands  -->
+        <models:CountryInfo CountryName="Cocos (Keeling) Islands (CC)" IconPath="avares://DesktopFilesGui/Assets/Flags/cc.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_CC</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Congo, Democratic Republic of the  -->
+        <models:CountryInfo CountryName="Congo, Democratic Republic of the (CD)" IconPath="avares://DesktopFilesGui/Assets/Flags/cd.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_CD</system:String>
+                    <system:String>ln_CD</system:String>
+                    <system:String>sw_CD</system:String>
+                    <system:String>kg_CD</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Central African Republic  -->
+        <models:CountryInfo CountryName="Central African Republic (CF)" IconPath="avares://DesktopFilesGui/Assets/Flags/cf.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_CF</system:String>
+                    <system:String>sg_CF</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Congo, Republic of the  -->
+        <models:CountryInfo CountryName="Congo, Republic of the (CG)" IconPath="avares://DesktopFilesGui/Assets/Flags/cg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_CG</system:String>
+                    <system:String>ln_CG</system:String>
+                    <system:String>kg_CG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Switzerland  -->
+        <models:CountryInfo CountryName="Switzerland (CH)" IconPath="avares://DesktopFilesGui/Assets/Flags/ch.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>de_CH</system:String>
+                    <system:String>fr_CH</system:String>
+                    <system:String>it_CH</system:String>
+                    <system:String>rm_CH</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Côte d'Ivoire  -->
+        <models:CountryInfo CountryName="Côte d'Ivoire (CI)" IconPath="avares://DesktopFilesGui/Assets/Flags/ci.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_CI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Cook Islands  -->
+        <models:CountryInfo CountryName="Cook Islands (CK)" IconPath="avares://DesktopFilesGui/Assets/Flags/ck.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_CK</system:String>
+                    <system:String>rar_CK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Chile  -->
+        <models:CountryInfo CountryName="Chile (CL)" IconPath="avares://DesktopFilesGui/Assets/Flags/cl.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_CL</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Cameroon  -->
+        <models:CountryInfo CountryName="Cameroon (CM)" IconPath="avares://DesktopFilesGui/Assets/Flags/cm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_CM</system:String>
+                    <system:String>en_CM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  China  -->
+        <models:CountryInfo CountryName="China (CN)" IconPath="avares://DesktopFilesGui/Assets/Flags/cn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>zh_CN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Colombia  -->
+        <models:CountryInfo CountryName="Colombia (CO)" IconPath="avares://DesktopFilesGui/Assets/Flags/co.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_CO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Costa Rica  -->
+        <models:CountryInfo CountryName="Costa Rica (CR)" IconPath="avares://DesktopFilesGui/Assets/Flags/cr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_CR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Cuba  -->
+        <models:CountryInfo CountryName="Cuba (CU)" IconPath="avares://DesktopFilesGui/Assets/Flags/cu.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_CU</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Cape Verde  -->
+        <models:CountryInfo CountryName="Cape Verde (CV)" IconPath="avares://DesktopFilesGui/Assets/Flags/cv.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>pt_CV</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Curaçao  -->
+        <models:CountryInfo CountryName="Curaçao (CW)" IconPath="avares://DesktopFilesGui/Assets/Flags/cw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>nl_CW</system:String>
+                    <system:String>pap_CW</system:String>
+                    <system:String>en_CW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Christmas Island  -->
+        <models:CountryInfo CountryName="Christmas Island (CX)" IconPath="avares://DesktopFilesGui/Assets/Flags/cx.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_CX</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Cyprus  -->
+        <models:CountryInfo CountryName="Cyprus (CY)" IconPath="avares://DesktopFilesGui/Assets/Flags/cy.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>el_CY</system:String>
+                    <system:String>tr_CY</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Czechia  -->
+        <models:CountryInfo CountryName="Czechia (CZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/cz.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>cs_CZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Germany  -->
+        <models:CountryInfo CountryName="Germany (DE)" IconPath="avares://DesktopFilesGui/Assets/Flags/de.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>de_DE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Djibouti  -->
+        <models:CountryInfo CountryName="Djibouti (DJ)" IconPath="avares://DesktopFilesGui/Assets/Flags/dj.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_DJ</system:String>
+                    <system:String>ar_DJ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Denmark  -->
+        <models:CountryInfo CountryName="Denmark (DK)" IconPath="avares://DesktopFilesGui/Assets/Flags/dk.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>da_DK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Dominica  -->
+        <models:CountryInfo CountryName="Dominica (DM)" IconPath="avares://DesktopFilesGui/Assets/Flags/dm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_DM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Dominican Republic  -->
+        <models:CountryInfo CountryName="Dominican Republic (DO)" IconPath="avares://DesktopFilesGui/Assets/Flags/do.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_DO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Algeria  -->
+        <models:CountryInfo CountryName="Algeria (DZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/dz.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_DZ</system:String>
+                    <system:String>fr_DZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Ecuador  -->
+        <models:CountryInfo CountryName="Ecuador (EC)" IconPath="avares://DesktopFilesGui/Assets/Flags/ec.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_EC</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Estonia  -->
+        <models:CountryInfo CountryName="Estonia (EE)" IconPath="avares://DesktopFilesGui/Assets/Flags/ee.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>et_EE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Egypt  -->
+        <models:CountryInfo CountryName="Egypt (EG)" IconPath="avares://DesktopFilesGui/Assets/Flags/eg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_EG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Western Sahara  -->
+        <models:CountryInfo CountryName="Western Sahara (EH)" IconPath="avares://DesktopFilesGui/Assets/Flags/eh.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_EH</system:String>
+                    <system:String>es_EH</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Eritrea  -->
+        <models:CountryInfo CountryName="Eritrea (ER)" IconPath="avares://DesktopFilesGui/Assets/Flags/er.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ti_ER</system:String>
+                    <system:String>ar_ER</system:String>
+                    <system:String>en_ER</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Spain  -->
+        <models:CountryInfo CountryName="Spain (ES)" IconPath="avares://DesktopFilesGui/Assets/Flags/es.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_ES</system:String>
+                    <system:String>ca_ES</system:String>
+                    <system:String>gl_ES</system:String>
+                    <system:String>eu_ES</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Ethiopia  -->
+        <models:CountryInfo CountryName="Ethiopia (ET)" IconPath="avares://DesktopFilesGui/Assets/Flags/et.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>am_ET</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Finland  -->
+        <models:CountryInfo CountryName="Finland (FI)" IconPath="avares://DesktopFilesGui/Assets/Flags/fi.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fi_FI</system:String>
+                    <system:String>sv_FI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Fiji  -->
+        <models:CountryInfo CountryName="Fiji (FJ)" IconPath="avares://DesktopFilesGui/Assets/Flags/fj.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_FJ</system:String>
+                    <system:String>fj_FJ</system:String>
+                    <system:String>hi_FJ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Falkland Islands  -->
+        <models:CountryInfo CountryName="Falkland Islands (FK)" IconPath="avares://DesktopFilesGui/Assets/Flags/fk.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_FK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Micronesia  -->
+        <models:CountryInfo CountryName="Micronesia (FM)" IconPath="avares://DesktopFilesGui/Assets/Flags/fm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_FM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Faroe Islands  -->
+        <models:CountryInfo CountryName="Faroe Islands (FO)" IconPath="avares://DesktopFilesGui/Assets/Flags/fo.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fo_FO</system:String>
+                    <system:String>da_FO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  France  -->
+        <models:CountryInfo CountryName="France (FR)" IconPath="avares://DesktopFilesGui/Assets/Flags/fr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_FR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Gabon  -->
+        <models:CountryInfo CountryName="Gabon (GA)" IconPath="avares://DesktopFilesGui/Assets/Flags/ga.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_GA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  United Kingdom  -->
+        <models:CountryInfo CountryName="United Kingdom (GB)" IconPath="avares://DesktopFilesGui/Assets/Flags/gb.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GB</system:String>
+                    <system:String>cy_GB</system:String>
+                    <system:String>gd_GB</system:String>
+                    <system:String>ga_GB</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  England  -->
+        <models:CountryInfo CountryName="England (GB-ENG)" IconPath="avares://DesktopFilesGui/Assets/Flags/gb-eng.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GB</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Northern Ireland  -->
+        <models:CountryInfo CountryName="Northern Ireland (GB-NIR)" IconPath="avares://DesktopFilesGui/Assets/Flags/gb-nir.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GB</system:String>
+                    <system:String>ga_GB</system:String>
+                    <system:String>sco_GB</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Scotland  -->
+        <models:CountryInfo CountryName="Scotland (GB-SCT)" IconPath="avares://DesktopFilesGui/Assets/Flags/gb-sct.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GB</system:String>
+                    <system:String>gd_GB</system:String>
+                    <system:String>sco_GB</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Wales  -->
+        <models:CountryInfo CountryName="Wales (GB-WLS)" IconPath="avares://DesktopFilesGui/Assets/Flags/gb-wls.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GB</system:String>
+                    <system:String>cy_GB</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Grenada  -->
+        <models:CountryInfo CountryName="Grenada (GD)" IconPath="avares://DesktopFilesGui/Assets/Flags/gd.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GD</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Georgia  -->
+        <models:CountryInfo CountryName="Georgia (GE)" IconPath="avares://DesktopFilesGui/Assets/Flags/ge.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ka_GE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  French Guiana  -->
+        <models:CountryInfo CountryName="French Guiana (GF)" IconPath="avares://DesktopFilesGui/Assets/Flags/gf.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_GF</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Guernsey  -->
+        <models:CountryInfo CountryName="Guernsey (GG)" IconPath="avares://DesktopFilesGui/Assets/Flags/gg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GG</system:String>
+                    <system:String>fr_GG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Ghana  -->
+        <models:CountryInfo CountryName="Ghana (GH)" IconPath="avares://DesktopFilesGui/Assets/Flags/gh.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GH</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Gibraltar  -->
+        <models:CountryInfo CountryName="Gibraltar (GI)" IconPath="avares://DesktopFilesGui/Assets/Flags/gi.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Greenland  -->
+        <models:CountryInfo CountryName="Greenland (GL)" IconPath="avares://DesktopFilesGui/Assets/Flags/gl.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>kl_GL</system:String>
+                    <system:String>da_GL</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Gambia  -->
+        <models:CountryInfo CountryName="Gambia (GM)" IconPath="avares://DesktopFilesGui/Assets/Flags/gm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Guinea  -->
+        <models:CountryInfo CountryName="Guinea (GN)" IconPath="avares://DesktopFilesGui/Assets/Flags/gn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_GN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Guadeloupe  -->
+        <models:CountryInfo CountryName="Guadeloupe (GP)" IconPath="avares://DesktopFilesGui/Assets/Flags/gp.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_GP</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Equatorial Guinea  -->
+        <models:CountryInfo CountryName="Equatorial Guinea (GQ)" IconPath="avares://DesktopFilesGui/Assets/Flags/gq.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_GQ</system:String>
+                    <system:String>fr_GQ</system:String>
+                    <system:String>pt_GQ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Greece  -->
+        <models:CountryInfo CountryName="Greece (GR)" IconPath="avares://DesktopFilesGui/Assets/Flags/gr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>el_GR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  South Georgia and the South Sandwich Islands  -->
+        <models:CountryInfo CountryName="South Georgia and the South Sandwich Islands (GS)" IconPath="avares://DesktopFilesGui/Assets/Flags/gs.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Guatemala  -->
+        <models:CountryInfo CountryName="Guatemala (GT)" IconPath="avares://DesktopFilesGui/Assets/Flags/gt.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_GT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Guam  -->
+        <models:CountryInfo CountryName="Guam (GU)" IconPath="avares://DesktopFilesGui/Assets/Flags/gu.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GU</system:String>
+                    <system:String>ch_GU</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Guinea-Bissau  -->
+        <models:CountryInfo CountryName="Guinea-Bissau (GW)" IconPath="avares://DesktopFilesGui/Assets/Flags/gw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>pt_GW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Guyana  -->
+        <models:CountryInfo CountryName="Guyana (GY)" IconPath="avares://DesktopFilesGui/Assets/Flags/gy.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_GY</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Hong Kong  -->
+        <models:CountryInfo CountryName="Hong Kong (HK)" IconPath="avares://DesktopFilesGui/Assets/Flags/hk.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>zh_HK</system:String>
+                    <system:String>en_HK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Heard Island and McDonald Islands  -->
+        <models:CountryInfo CountryName="Heard Island and McDonald Islands (HM)" IconPath="avares://DesktopFilesGui/Assets/Flags/hm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_HM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Honduras  -->
+        <models:CountryInfo CountryName="Honduras (HN)" IconPath="avares://DesktopFilesGui/Assets/Flags/hn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_HN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Croatia  -->
+        <models:CountryInfo CountryName="Croatia (HR)" IconPath="avares://DesktopFilesGui/Assets/Flags/hr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>hr_HR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Haiti  -->
+        <models:CountryInfo CountryName="Haiti (HT)" IconPath="avares://DesktopFilesGui/Assets/Flags/ht.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_HT</system:String>
+                    <system:String>ht_HT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Hungary  -->
+        <models:CountryInfo CountryName="Hungary (HU)" IconPath="avares://DesktopFilesGui/Assets/Flags/hu.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>hu_HU</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Indonesia  -->
+        <models:CountryInfo CountryName="Indonesia (ID)" IconPath="avares://DesktopFilesGui/Assets/Flags/id.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>id_ID</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Ireland  -->
+        <models:CountryInfo CountryName="Ireland (IE)" IconPath="avares://DesktopFilesGui/Assets/Flags/ie.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ga_IE</system:String>
+                    <system:String>en_IE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Israel  -->
+        <models:CountryInfo CountryName="Israel (IL)" IconPath="avares://DesktopFilesGui/Assets/Flags/il.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>he_IL</system:String>
+                    <system:String>ar_IL</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Isle of Man  -->
+        <models:CountryInfo CountryName="Isle of Man (IM)" IconPath="avares://DesktopFilesGui/Assets/Flags/im.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_IM</system:String>
+                    <system:String>gv_IM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  India  -->
+        <models:CountryInfo CountryName="India (IN)" IconPath="avares://DesktopFilesGui/Assets/Flags/in.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>hi_IN</system:String>
+                    <system:String>en_IN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  British Indian Ocean Territory  -->
+        <models:CountryInfo CountryName="British Indian Ocean Territory (IO)" IconPath="avares://DesktopFilesGui/Assets/Flags/io.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_IO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Iraq  -->
+        <models:CountryInfo CountryName="Iraq (IQ)" IconPath="avares://DesktopFilesGui/Assets/Flags/iq.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_IQ</system:String>
+                    <system:String>ku_IQ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Iran  -->
+        <models:CountryInfo CountryName="Iran (IR)" IconPath="avares://DesktopFilesGui/Assets/Flags/ir.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fa_IR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Iceland  -->
+        <models:CountryInfo CountryName="Iceland (IS)" IconPath="avares://DesktopFilesGui/Assets/Flags/is.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>is_IS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Italy  -->
+        <models:CountryInfo CountryName="Italy (IT)" IconPath="avares://DesktopFilesGui/Assets/Flags/it.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>it_IT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Jersey  -->
+        <models:CountryInfo CountryName="Jersey (JE)" IconPath="avares://DesktopFilesGui/Assets/Flags/je.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_JE</system:String>
+                    <system:String>fr_JE</system:String>
+                    <system:String>nrf_JE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Jamaica  -->
+        <models:CountryInfo CountryName="Jamaica (JM)" IconPath="avares://DesktopFilesGui/Assets/Flags/jm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_JM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Jordan  -->
+        <models:CountryInfo CountryName="Jordan (JO)" IconPath="avares://DesktopFilesGui/Assets/Flags/jo.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_JO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Japan  -->
+        <models:CountryInfo CountryName="Japan (JP)" IconPath="avares://DesktopFilesGui/Assets/Flags/jp.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ja_JP</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Kenya  -->
+        <models:CountryInfo CountryName="Kenya (KE)" IconPath="avares://DesktopFilesGui/Assets/Flags/ke.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sw_KE</system:String>
+                    <system:String>en_KE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Kyrgyzstan  -->
+        <models:CountryInfo CountryName="Kyrgyzstan (KG)" IconPath="avares://DesktopFilesGui/Assets/Flags/kg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ky_KG</system:String>
+                    <system:String>ru_KG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Cambodia  -->
+        <models:CountryInfo CountryName="Cambodia (KH)" IconPath="avares://DesktopFilesGui/Assets/Flags/kh.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>km_KH</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Kiribati  -->
+        <models:CountryInfo CountryName="Kiribati (KI)" IconPath="avares://DesktopFilesGui/Assets/Flags/ki.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_KI</system:String>
+                    <system:String>gil_KI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Comoros  -->
+        <models:CountryInfo CountryName="Comoros (KM)" IconPath="avares://DesktopFilesGui/Assets/Flags/km.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_KM</system:String>
+                    <system:String>fr_KM</system:String>
+                    <system:String>zdj_KM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Saint Kitts and Nevis  -->
+        <models:CountryInfo CountryName="Saint Kitts and Nevis (KN)" IconPath="avares://DesktopFilesGui/Assets/Flags/kn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_KN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  North Korea  -->
+        <models:CountryInfo CountryName="North Korea (KP)" IconPath="avares://DesktopFilesGui/Assets/Flags/kp.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ko_KP</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  South Korea  -->
+        <models:CountryInfo CountryName="South Korea (KR)" IconPath="avares://DesktopFilesGui/Assets/Flags/kr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ko_KR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Kuwait  -->
+        <models:CountryInfo CountryName="Kuwait (KW)" IconPath="avares://DesktopFilesGui/Assets/Flags/kw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_KW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Cayman Islands  -->
+        <models:CountryInfo CountryName="Cayman Islands (KY)" IconPath="avares://DesktopFilesGui/Assets/Flags/ky.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_KY</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Kazakhstan  -->
+        <models:CountryInfo CountryName="Kazakhstan (KZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/kz.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>kk_KZ</system:String>
+                    <system:String>ru_KZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Laos  -->
+        <models:CountryInfo CountryName="Laos (LA)" IconPath="avares://DesktopFilesGui/Assets/Flags/la.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>lo_LA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Lebanon  -->
+        <models:CountryInfo CountryName="Lebanon (LB)" IconPath="avares://DesktopFilesGui/Assets/Flags/lb.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_LB</system:String>
+                    <system:String>fr_LB</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Saint Lucia  -->
+        <models:CountryInfo CountryName="Saint Lucia (LC)" IconPath="avares://DesktopFilesGui/Assets/Flags/lc.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_LC</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Liechtenstein  -->
+        <models:CountryInfo CountryName="Liechtenstein (LI)" IconPath="avares://DesktopFilesGui/Assets/Flags/li.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>de_LI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Sri Lanka  -->
+        <models:CountryInfo CountryName="Sri Lanka (LK)" IconPath="avares://DesktopFilesGui/Assets/Flags/lk.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>si_LK</system:String>
+                    <system:String>ta_LK</system:String>
+                    <system:String>en_LK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Liberia  -->
+        <models:CountryInfo CountryName="Liberia (LR)" IconPath="avares://DesktopFilesGui/Assets/Flags/lr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_LR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Lesotho  -->
+        <models:CountryInfo CountryName="Lesotho (LS)" IconPath="avares://DesktopFilesGui/Assets/Flags/ls.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>st_LS</system:String>
+                    <system:String>en_LS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Lithuania  -->
+        <models:CountryInfo CountryName="Lithuania (LT)" IconPath="avares://DesktopFilesGui/Assets/Flags/lt.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>lt_LT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Luxembourg  -->
+        <models:CountryInfo CountryName="Luxembourg (LU)" IconPath="avares://DesktopFilesGui/Assets/Flags/lu.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>lb_LU</system:String>
+                    <system:String>fr_LU</system:String>
+                    <system:String>de_LU</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Latvia  -->
+        <models:CountryInfo CountryName="Latvia (LV)" IconPath="avares://DesktopFilesGui/Assets/Flags/lv.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>lv_LV</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Libya  -->
+        <models:CountryInfo CountryName="Libya (LY)" IconPath="avares://DesktopFilesGui/Assets/Flags/ly.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_LY</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Morocco  -->
+        <models:CountryInfo CountryName="Morocco (MA)" IconPath="avares://DesktopFilesGui/Assets/Flags/ma.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_MA</system:String>
+                    <system:String>ber_MA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Monaco  -->
+        <models:CountryInfo CountryName="Monaco (MC)" IconPath="avares://DesktopFilesGui/Assets/Flags/mc.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_MC</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Moldova  -->
+        <models:CountryInfo CountryName="Moldova (MD)" IconPath="avares://DesktopFilesGui/Assets/Flags/md.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ro_MD</system:String>
+                    <system:String>ru_MD</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Montenegro  -->
+        <models:CountryInfo CountryName="Montenegro (ME)" IconPath="avares://DesktopFilesGui/Assets/Flags/me.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sr_ME</system:String>
+                    <system:String>bs_ME</system:String>
+                    <system:String>sq_ME</system:String>
+                    <system:String>hr_ME</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Saint Martin (French part)  -->
+        <models:CountryInfo CountryName="Saint Martin (MF)" IconPath="avares://DesktopFilesGui/Assets/Flags/mf.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_MF</system:String>
+                    <system:String>en_MF</system:String>
+                    <system:String>nl_MF</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Madagascar  -->
+        <models:CountryInfo CountryName="Madagascar (MG)" IconPath="avares://DesktopFilesGui/Assets/Flags/mg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>mg_MG</system:String>
+                    <system:String>fr_MG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Marshall Islands  -->
+        <models:CountryInfo CountryName="Marshall Islands (MH)" IconPath="avares://DesktopFilesGui/Assets/Flags/mh.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_MH</system:String>
+                    <system:String>mh_MH</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  North Macedonia  -->
+        <models:CountryInfo CountryName="North Macedonia (MK)" IconPath="avares://DesktopFilesGui/Assets/Flags/mk.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>mk_MK</system:String>
+                    <system:String>sq_MK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Mali  -->
+        <models:CountryInfo CountryName="Mali (ML)" IconPath="avares://DesktopFilesGui/Assets/Flags/ml.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_ML</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Myanmar  -->
+        <models:CountryInfo CountryName="Myanmar (MM)" IconPath="avares://DesktopFilesGui/Assets/Flags/mm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>my_MM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Mongolia  -->
+        <models:CountryInfo CountryName="Mongolia (MN)" IconPath="avares://DesktopFilesGui/Assets/Flags/mn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>mn_MN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Macao  -->
+        <models:CountryInfo CountryName="Macao (MO)" IconPath="avares://DesktopFilesGui/Assets/Flags/mo.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>zh_MO</system:String>
+                    <system:String>pt_MO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Northern Mariana Islands  -->
+        <models:CountryInfo CountryName="Northern Mariana Islands (MP)" IconPath="avares://DesktopFilesGui/Assets/Flags/mp.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_MP</system:String>
+                    <system:String>ch_MP</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Martinique  -->
+        <models:CountryInfo CountryName="Martinique (MQ)" IconPath="avares://DesktopFilesGui/Assets/Flags/mq.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_MQ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Mauritania  -->
+        <models:CountryInfo CountryName="Mauritania (MR)" IconPath="avares://DesktopFilesGui/Assets/Flags/mr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_MR</system:String>
+                    <system:String>fr_MR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Montserrat  -->
+        <models:CountryInfo CountryName="Montserrat (MS)" IconPath="avares://DesktopFilesGui/Assets/Flags/ms.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_MS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Malta  -->
+        <models:CountryInfo CountryName="Malta (MT)" IconPath="avares://DesktopFilesGui/Assets/Flags/mt.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>mt_MT</system:String>
+                    <system:String>en_MT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Mauritius  -->
+        <models:CountryInfo CountryName="Mauritius (MU)" IconPath="avares://DesktopFilesGui/Assets/Flags/mu.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_MU</system:String>
+                    <system:String>fr_MU</system:String>
+                    <system:String>mfe_MU</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Maldives  -->
+        <models:CountryInfo CountryName="Maldives (MV)" IconPath="avares://DesktopFilesGui/Assets/Flags/mv.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>dv_MV</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Malawi  -->
+        <models:CountryInfo CountryName="Malawi (MW)" IconPath="avares://DesktopFilesGui/Assets/Flags/mw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_MW</system:String>
+                    <system:String>ny_MW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Mexico  -->
+        <models:CountryInfo CountryName="Mexico (MX)" IconPath="avares://DesktopFilesGui/Assets/Flags/mx.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_MX</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Malaysia  -->
+        <models:CountryInfo CountryName="Malaysia (MY)" IconPath="avares://DesktopFilesGui/Assets/Flags/my.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ms_MY</system:String>
+                    <system:String>en_MY</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Mozambique  -->
+        <models:CountryInfo CountryName="Mozambique (MZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/mz.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>pt_MZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Namibia  -->
+        <models:CountryInfo CountryName="Namibia (NA)" IconPath="avares://DesktopFilesGui/Assets/Flags/na.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_NA</system:String>
+                    <system:String>af_NA</system:String>
+                    <system:String>de_NA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  New Caledonia  -->
+        <models:CountryInfo CountryName="New Caledonia (NC)" IconPath="avares://DesktopFilesGui/Assets/Flags/nc.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_NC</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Niger  -->
+        <models:CountryInfo CountryName="Niger (NE)" IconPath="avares://DesktopFilesGui/Assets/Flags/ne.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_NE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Norfolk Island  -->
+        <models:CountryInfo CountryName="Norfolk Island (NF)" IconPath="avares://DesktopFilesGui/Assets/Flags/nf.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_NF</system:String>
+                    <system:String>pih_NF</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Nigeria  -->
+        <models:CountryInfo CountryName="Nigeria (NG)" IconPath="avares://DesktopFilesGui/Assets/Flags/ng.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_NG</system:String>
+                    <system:String>ha_NG</system:String>
+                    <system:String>yo_NG</system:String>
+                    <system:String>ig_NG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Nicaragua  -->
+        <models:CountryInfo CountryName="Nicaragua (NI)" IconPath="avares://DesktopFilesGui/Assets/Flags/ni.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_NI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Netherlands  -->
+        <models:CountryInfo CountryName="Netherlands (NL)" IconPath="avares://DesktopFilesGui/Assets/Flags/nl.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>nl_NL</system:String>
+                    <system:String>fy_NL</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Norway  -->
+        <models:CountryInfo CountryName="Norway (NO)" IconPath="avares://DesktopFilesGui/Assets/Flags/no.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>no_NO</system:String>
+                    <system:String>nb_NO</system:String>
+                    <system:String>nn_NO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Nepal  -->
+        <models:CountryInfo CountryName="Nepal (NP)" IconPath="avares://DesktopFilesGui/Assets/Flags/np.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ne_NP</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Nauru  -->
+        <models:CountryInfo CountryName="Nauru (NR)" IconPath="avares://DesktopFilesGui/Assets/Flags/nr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>na_NR</system:String>
+                    <system:String>en_NR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Niue  -->
+        <models:CountryInfo CountryName="Niue (NU)" IconPath="avares://DesktopFilesGui/Assets/Flags/nu.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_NU</system:String>
+                    <system:String>niu_NU</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  New Zealand  -->
+        <models:CountryInfo CountryName="New Zealand (NZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/nz.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_NZ</system:String>
+                    <system:String>mi_NZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Oman  -->
+        <models:CountryInfo CountryName="Oman (OM)" IconPath="avares://DesktopFilesGui/Assets/Flags/om.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_OM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Panama  -->
+        <models:CountryInfo CountryName="Panama (PA)" IconPath="avares://DesktopFilesGui/Assets/Flags/pa.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_PA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Peru  -->
+        <models:CountryInfo CountryName="Peru (PE)" IconPath="avares://DesktopFilesGui/Assets/Flags/pe.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_PE</system:String>
+                    <system:String>qu_PE</system:String>
+                    <system:String>ay_PE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  French Polynesia  -->
+        <models:CountryInfo CountryName="French Polynesia (PF)" IconPath="avares://DesktopFilesGui/Assets/Flags/pf.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_PF</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Papua New Guinea  -->
+        <models:CountryInfo CountryName="Papua New Guinea (PG)" IconPath="avares://DesktopFilesGui/Assets/Flags/pg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_PG</system:String>
+                    <system:String>tpi_PG</system:String>
+                    <system:String>ho_PG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Philippines  -->
+        <models:CountryInfo CountryName="Philippines (PH)" IconPath="avares://DesktopFilesGui/Assets/Flags/ph.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fil_PH</system:String>
+                    <system:String>en_PH</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Pakistan  -->
+        <models:CountryInfo CountryName="Pakistan (PK)" IconPath="avares://DesktopFilesGui/Assets/Flags/pk.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ur_PK</system:String>
+                    <system:String>en_PK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Poland  -->
+        <models:CountryInfo CountryName="Poland (PL)" IconPath="avares://DesktopFilesGui/Assets/Flags/pl.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>pl_PL</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Saint Pierre and Miquelon  -->
+        <models:CountryInfo CountryName="Saint Pierre and Miquelon (PM)" IconPath="avares://DesktopFilesGui/Assets/Flags/pm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_PM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Pitcairn Islands  -->
+        <models:CountryInfo CountryName="Pitcairn Islands (PN)" IconPath="avares://DesktopFilesGui/Assets/Flags/pn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_PN</system:String>
+                    <system:String>pih_PN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Puerto Rico  -->
+        <models:CountryInfo CountryName="Puerto Rico (PR)" IconPath="avares://DesktopFilesGui/Assets/Flags/pr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_PR</system:String>
+                    <system:String>en_PR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Palestine  -->
+        <models:CountryInfo CountryName="Palestine (PS)" IconPath="avares://DesktopFilesGui/Assets/Flags/ps.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_PS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Portugal  -->
+        <models:CountryInfo CountryName="Portugal (PT)" IconPath="avares://DesktopFilesGui/Assets/Flags/pt.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>pt_PT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Palau  -->
+        <models:CountryInfo CountryName="Palau (PW)" IconPath="avares://DesktopFilesGui/Assets/Flags/pw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_PW</system:String>
+                    <system:String>pau_PW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Paraguay  -->
+        <models:CountryInfo CountryName="Paraguay (PY)" IconPath="avares://DesktopFilesGui/Assets/Flags/py.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_PY</system:String>
+                    <system:String>gn_PY</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Qatar  -->
+        <models:CountryInfo CountryName="Qatar (QA)" IconPath="avares://DesktopFilesGui/Assets/Flags/qa.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_QA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Réunion  -->
+        <models:CountryInfo CountryName="Réunion (RE)" IconPath="avares://DesktopFilesGui/Assets/Flags/re.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_RE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Romania  -->
+        <models:CountryInfo CountryName="Romania (RO)" IconPath="avares://DesktopFilesGui/Assets/Flags/ro.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ro_RO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Serbia  -->
+        <models:CountryInfo CountryName="Serbia (RS)" IconPath="avares://DesktopFilesGui/Assets/Flags/rs.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sr_RS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Russia  -->
+        <models:CountryInfo CountryName="Russia (RU)" IconPath="avares://DesktopFilesGui/Assets/Flags/ru.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ru_RU</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Rwanda  -->
+        <models:CountryInfo CountryName="Rwanda (RW)" IconPath="avares://DesktopFilesGui/Assets/Flags/rw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>rw_RW</system:String>
+                    <system:String>fr_RW</system:String>
+                    <system:String>en_RW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Saudi Arabia  -->
+        <models:CountryInfo CountryName="Saudi Arabia (SA)" IconPath="avares://DesktopFilesGui/Assets/Flags/sa.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_SA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Solomon Islands  -->
+        <models:CountryInfo CountryName="Solomon Islands (SB)" IconPath="avares://DesktopFilesGui/Assets/Flags/sb.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_SB</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Seychelles  -->
+        <models:CountryInfo CountryName="Seychelles (SC)" IconPath="avares://DesktopFilesGui/Assets/Flags/sc.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_SC</system:String>
+                    <system:String>fr_SC</system:String>
+                    <system:String>crs_SC</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Sudan  -->
+        <models:CountryInfo CountryName="Sudan (SD)" IconPath="avares://DesktopFilesGui/Assets/Flags/sd.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_SD</system:String>
+                    <system:String>en_SD</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Sweden  -->
+        <models:CountryInfo CountryName="Sweden (SE)" IconPath="avares://DesktopFilesGui/Assets/Flags/se.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sv_SE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Singapore  -->
+        <models:CountryInfo CountryName="Singapore (SG)" IconPath="avares://DesktopFilesGui/Assets/Flags/sg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_SG</system:String>
+                    <system:String>zh_SG</system:String>
+                    <system:String>ms_SG</system:String>
+                    <system:String>ta_SG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Saint Helena, Ascension and Tristan da Cunha  -->
+        <models:CountryInfo CountryName="Saint Helena, Ascension and Tristan da Cunha (SH)" IconPath="avares://DesktopFilesGui/Assets/Flags/sh.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_SH</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Slovenia  -->
+        <models:CountryInfo CountryName="Slovenia (SI)" IconPath="avares://DesktopFilesGui/Assets/Flags/si.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sl_SI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Svalbard and Jan Mayen  -->
+        <models:CountryInfo CountryName="Svalbard and Jan Mayen (SJ)" IconPath="avares://DesktopFilesGui/Assets/Flags/sj.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>no_SJ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Slovakia  -->
+        <models:CountryInfo CountryName="Slovakia (SK)" IconPath="avares://DesktopFilesGui/Assets/Flags/sk.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sk_SK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Sierra Leone  -->
+        <models:CountryInfo CountryName="Sierra Leone (SL)" IconPath="avares://DesktopFilesGui/Assets/Flags/sl.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_SL</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  San Marino  -->
+        <models:CountryInfo CountryName="San Marino (SM)" IconPath="avares://DesktopFilesGui/Assets/Flags/sm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>it_SM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Senegal  -->
+        <models:CountryInfo CountryName="Senegal (SN)" IconPath="avares://DesktopFilesGui/Assets/Flags/sn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_SN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Somalia  -->
+        <models:CountryInfo CountryName="Somalia (SO)" IconPath="avares://DesktopFilesGui/Assets/Flags/so.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>so_SO</system:String>
+                    <system:String>ar_SO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Suriname  -->
+        <models:CountryInfo CountryName="Suriname (SR)" IconPath="avares://DesktopFilesGui/Assets/Flags/sr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>nl_SR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  South Sudan  -->
+        <models:CountryInfo CountryName="South Sudan (SS)" IconPath="avares://DesktopFilesGui/Assets/Flags/ss.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_SS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  São Tomé and Príncipe  -->
+        <models:CountryInfo CountryName="São Tomé and Príncipe (ST)" IconPath="avares://DesktopFilesGui/Assets/Flags/st.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>pt_ST</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  El Salvador  -->
+        <models:CountryInfo CountryName="El Salvador (SV)" IconPath="avares://DesktopFilesGui/Assets/Flags/sv.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_SV</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Sint Maarten (Dutch part)  -->
+        <models:CountryInfo CountryName="Sint Maarten (SX)" IconPath="avares://DesktopFilesGui/Assets/Flags/sx.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>nl_SX</system:String>
+                    <system:String>en_SX</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Syria  -->
+        <models:CountryInfo CountryName="Syria (SY)" IconPath="avares://DesktopFilesGui/Assets/Flags/sy.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_SY</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Eswatini  -->
+        <models:CountryInfo CountryName="Eswatini (SZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/sz.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_SZ</system:String>
+                    <system:String>ss_SZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Turks and Caicos Islands  -->
+        <models:CountryInfo CountryName="Turks and Caicos Islands (TC)" IconPath="avares://DesktopFilesGui/Assets/Flags/tc.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_TC</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Chad  -->
+        <models:CountryInfo CountryName="Chad (TD)" IconPath="avares://DesktopFilesGui/Assets/Flags/td.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_TD</system:String>
+                    <system:String>ar_TD</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  French Southern and Antarctic Lands  -->
+        <models:CountryInfo CountryName="French Southern and Antarctic Lands (TF)" IconPath="avares://DesktopFilesGui/Assets/Flags/tf.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_TF</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Togo  -->
+        <models:CountryInfo CountryName="Togo (TG)" IconPath="avares://DesktopFilesGui/Assets/Flags/tg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_TG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Thailand  -->
+        <models:CountryInfo CountryName="Thailand (TH)" IconPath="avares://DesktopFilesGui/Assets/Flags/th.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>th_TH</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Tajikistan  -->
+        <models:CountryInfo CountryName="Tajikistan (TJ)" IconPath="avares://DesktopFilesGui/Assets/Flags/tj.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>tg_TJ</system:String>
+                    <system:String>ru_TJ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Tokelau  -->
+        <models:CountryInfo CountryName="Tokelau (TK)" IconPath="avares://DesktopFilesGui/Assets/Flags/tk.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_TK</system:String>
+                    <system:String>tkl_TK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Timor-Leste  -->
+        <models:CountryInfo CountryName="Timor-Leste (TL)" IconPath="avares://DesktopFilesGui/Assets/Flags/tl.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>pt_TL</system:String>
+                    <system:String>tet_TL</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Turkmenistan  -->
+        <models:CountryInfo CountryName="Turkmenistan (TM)" IconPath="avares://DesktopFilesGui/Assets/Flags/tm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>tk_TM</system:String>
+                    <system:String>ru_TM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Tunisia  -->
+        <models:CountryInfo CountryName="Tunisia (TN)" IconPath="avares://DesktopFilesGui/Assets/Flags/tn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_TN</system:String>
+                    <system:String>fr_TN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Tonga  -->
+        <models:CountryInfo CountryName="Tonga (TO)" IconPath="avares://DesktopFilesGui/Assets/Flags/to.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_TO</system:String>
+                    <system:String>to_TO</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Turkey  -->
+        <models:CountryInfo CountryName="Turkey (TR)" IconPath="avares://DesktopFilesGui/Assets/Flags/tr.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>tr_TR</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Trinidad and Tobago  -->
+        <models:CountryInfo CountryName="Trinidad and Tobago (TT)" IconPath="avares://DesktopFilesGui/Assets/Flags/tt.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_TT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Tuvalu  -->
+        <models:CountryInfo CountryName="Tuvalu (TV)" IconPath="avares://DesktopFilesGui/Assets/Flags/tv.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_TV</system:String>
+                    <system:String>tvl_TV</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Taiwan  -->
+        <models:CountryInfo CountryName="Taiwan (TW)" IconPath="avares://DesktopFilesGui/Assets/Flags/tw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>zh_TW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Tanzania  -->
+        <models:CountryInfo CountryName="Tanzania (TZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/tz.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sw_TZ</system:String>
+                    <system:String>en_TZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Ukraine  -->
+        <models:CountryInfo CountryName="Ukraine (UA)" IconPath="avares://DesktopFilesGui/Assets/Flags/ua.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>uk_UA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Uganda  -->
+        <models:CountryInfo CountryName="Uganda (UG)" IconPath="avares://DesktopFilesGui/Assets/Flags/ug.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_UG</system:String>
+                    <system:String>sw_UG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  United States Minor Outlying Islands  -->
+        <models:CountryInfo CountryName="United States Minor Outlying Islands (UM)" IconPath="avares://DesktopFilesGui/Assets/Flags/um.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_UM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  United States  -->
+        <models:CountryInfo CountryName="United States (US)" IconPath="avares://DesktopFilesGui/Assets/Flags/us.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_US</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Uruguay  -->
+        <models:CountryInfo CountryName="Uruguay (UY)" IconPath="avares://DesktopFilesGui/Assets/Flags/uy.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_UY</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Uzbekistan  -->
+        <models:CountryInfo CountryName="Uzbekistan (UZ)" IconPath="avares://DesktopFilesGui/Assets/Flags/uz.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>uz_UZ</system:String>
+                    <system:String>ru_UZ</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Vatican City  -->
+        <models:CountryInfo CountryName="Vatican City (VA)" IconPath="avares://DesktopFilesGui/Assets/Flags/va.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>it_VA</system:String>
+                    <system:String>la_VA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Saint Vincent and the Grenadines  -->
+        <models:CountryInfo CountryName="Saint Vincent and the Grenadines (VC)" IconPath="avares://DesktopFilesGui/Assets/Flags/vc.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_VC</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Venezuela  -->
+        <models:CountryInfo CountryName="Venezuela (VE)" IconPath="avares://DesktopFilesGui/Assets/Flags/ve.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>es_VE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  British Virgin Islands  -->
+        <models:CountryInfo CountryName="British Virgin Islands (VG)" IconPath="avares://DesktopFilesGui/Assets/Flags/vg.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_VG</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  United States Virgin Islands  -->
+        <models:CountryInfo CountryName="United States Virgin Islands (VI)" IconPath="avares://DesktopFilesGui/Assets/Flags/vi.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_VI</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Vietnam  -->
+        <models:CountryInfo CountryName="Vietnam (VN)" IconPath="avares://DesktopFilesGui/Assets/Flags/vn.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>vi_VN</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Vanuatu  -->
+        <models:CountryInfo CountryName="Vanuatu (VU)" IconPath="avares://DesktopFilesGui/Assets/Flags/vu.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_VU</system:String>
+                    <system:String>fr_VU</system:String>
+                    <system:String>bi_VU</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Wallis and Futuna  -->
+        <models:CountryInfo CountryName="Wallis and Futuna (WF)" IconPath="avares://DesktopFilesGui/Assets/Flags/wf.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_WF</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Samoa  -->
+        <models:CountryInfo CountryName="Samoa (WS)" IconPath="avares://DesktopFilesGui/Assets/Flags/ws.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_WS</system:String>
+                    <system:String>sm_WS</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Kosovo  -->
+        <models:CountryInfo CountryName="Kosovo (XK)" IconPath="avares://DesktopFilesGui/Assets/Flags/xk.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>sq_XK</system:String>
+                    <system:String>sr_XK</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Yemen  -->
+        <models:CountryInfo CountryName="Yemen (YE)" IconPath="avares://DesktopFilesGui/Assets/Flags/ye.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>ar_YE</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Mayotte  -->
+        <models:CountryInfo CountryName="Mayotte (YT)" IconPath="avares://DesktopFilesGui/Assets/Flags/yt.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>fr_YT</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  South Africa  -->
+        <models:CountryInfo CountryName="South Africa (ZA)" IconPath="avares://DesktopFilesGui/Assets/Flags/za.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>af_ZA</system:String>
+                    <system:String>en_ZA</system:String>
+                    <system:String>zu_ZA</system:String>
+                    <system:String>xh_ZA</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Zambia  -->
+        <models:CountryInfo CountryName="Zambia (ZM)" IconPath="avares://DesktopFilesGui/Assets/Flags/zm.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_ZM</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+        <!--  Zimbabwe  -->
+        <models:CountryInfo CountryName="Zimbabwe (ZW)" IconPath="avares://DesktopFilesGui/Assets/Flags/zw.png">
+            <models:CountryInfo.Keys>
+                <generic:List x:TypeArguments="system:String">
+                    <system:String>en_ZW</system:String>
+                    <system:String>sn_ZW</system:String>
+                    <system:String>nd_ZW</system:String>
+                </generic:List>
+            </models:CountryInfo.Keys>
+        </models:CountryInfo>
+    </generic:List>
+
+</ResourceDictionary>

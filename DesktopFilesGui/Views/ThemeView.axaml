@@ -12,6 +12,55 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <StackPanel />
+    <StackPanel>
+        <TextBlock
+            Margin="20,20,0,0"
+            FontWeight="Bold"
+            Text="Theme settings" />
+        <Separator></Separator>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock
+                Margin="20,20,0,0"
+                Name="PrimaryColor"
+                Text="Primary color" />
+            <ColorPicker
+                IsAccentColorsVisible="True"
+                IsAlphaVisible="False"
+                IsColorComponentsVisible="False"
+                IsColorModelVisible="False"
+                IsColorPaletteVisible="True"
+                IsColorSpectrumSliderVisible="True"
+                IsColorSpectrumVisible="False"
+                IsComponentSliderVisible="False"
+                IsComponentTextInputVisible="False"
+                IsHexInputVisible="False"
+                Margin="20,13,0,0">
+                <ColorPicker.Palette>
+                    <MaterialHalfColorPalette />
+                </ColorPicker.Palette>
+            </ColorPicker>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock
+                Margin="20,20,0,0"
+                Text="Secondary color" />
+            <ColorPicker
+                IsAccentColorsVisible="True"
+                IsAlphaVisible="False"
+                IsColorComponentsVisible="False"
+                IsColorModelVisible="False"
+                IsColorPaletteVisible="True"
+                IsColorSpectrumSliderVisible="True"
+                IsColorSpectrumVisible="False"
+                IsComponentSliderVisible="False"
+                IsComponentTextInputVisible="False"
+                IsHexInputVisible="False"
+                Margin="20,13,0,0">
+                <ColorPicker.Palette>
+                    <MaterialHalfColorPalette />
+                </ColorPicker.Palette>
+            </ColorPicker>
+        </StackPanel>
+    </StackPanel>
 
 </Window>

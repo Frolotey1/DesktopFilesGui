@@ -36,4 +36,16 @@ public sealed class DesktopFile
     
     [DesktopFileProperty("MimeType", DesktopFileType.Application)]
     public IEnumerable<string> SupportedMimeTypes { get; set; } = [];
+    
+    [DesktopFileProperty("Name")]
+    public string? Name { get; set; }
+    
+    [LocalizedDesktopFileProperty("Name")]
+    public IDictionary<string, string>? LocalizedName { get; set; }
+    
+    [DesktopFileProperty("GenericName")]
+    public string? GenericName { get; set; }
+    
+    [LocalizedDesktopFileProperty("GenericName")]
+    public IDictionary<string, string>? LocalizedGenericName { get; set; }
 }
