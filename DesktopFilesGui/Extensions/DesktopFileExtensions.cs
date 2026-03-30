@@ -13,8 +13,14 @@ public static class DesktopFileExtensions
     {
         return desktopFile.GetType()
             .GetProperties()
+            .Select(property => new
+            {
+                NullableActualValue = property.GetValue(desktopFile),
+                Attribute = property.GetCustomAttribute<TAttribute>()
+            })
+            .Where(property => property.NullableActualValue is not null)
             .Select(property =>
-                new DesktopFileProperty(property.GetCustomAttribute<TAttribute>(), property))
+                new DesktopFileProperty(property.Attribute, property.NullableActualValue! ))
             .Where(prop => prop.Attribute is not null)
             .Where(prop =>
                 prop.Attribute!.TypeWhenAdd is null

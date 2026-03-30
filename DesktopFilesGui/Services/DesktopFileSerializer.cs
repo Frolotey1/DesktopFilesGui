@@ -13,7 +13,7 @@ using Serilog;
 
 namespace DesktopFilesGui.Services;
 
-public class DesktopFileSerializer(ILogger logger) : IDesktopFileSerializer
+public sealed class DesktopFileSerializer(ILogger logger) : IDesktopFileSerializer
 {
     public string Serialize(DesktopFile desktopFile)
     {
@@ -41,7 +41,7 @@ public class DesktopFileSerializer(ILogger logger) : IDesktopFileSerializer
     private bool IsNotEmptyValue(string? propertyValue)
     {
         // ; means empty desktop file array
-        return propertyValue is not [';'] && !string.IsNullOrWhiteSpace(propertyValue);
+        return propertyValue != ";" && !string.IsNullOrWhiteSpace(propertyValue);
     }
 
     private IEnumerable<KeyValuePair<string, string>> GetDesktopProperties(DesktopFile desktopFile)
@@ -50,11 +50,9 @@ public class DesktopFileSerializer(ILogger logger) : IDesktopFileSerializer
             .GetDesktopFileProperties<DesktopFilePropertyAttribute>()
             .Select(prop =>
             {
-                var value = prop.ClrProperty.PropertyType == typeof(IEnumerable<string>)
-                    ? (prop.ClrProperty
-                        .GetValue(desktopFile) as IEnumerable<string> ?? [])
-                    .ToDesktopFileArray()
-                    : prop.ClrProperty?.GetValue(desktopFile)?.ToString() ?? string.Empty;
+                var value = prop.ValueActual is IEnumerable<string> enumerable
+                    ? enumerable.ToDesktopFileArray()
+                    : prop.ValueActual.ToString() ?? string.Empty;
 
                 var key = prop.Attribute!.Key;
 
@@ -75,7 +73,7 @@ public class DesktopFileSerializer(ILogger logger) : IDesktopFileSerializer
             .GetDesktopFileProperties<LocalizedDesktopFilePropertyAttribute>()
             .Select(property =>
             {
-                var objectValue = property.ClrProperty.GetValue(desktopFile);
+                var objectValue = property.ValueActual;
              
                 if(objectValue is not IDictionary dictionary)
                     throw new InvalidOperationException($"Property that has {nameof(LocalizedDesktopFilePropertyAttribute)} must implement {nameof(IDictionary)}");

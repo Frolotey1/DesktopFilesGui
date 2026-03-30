@@ -1,6 +1,6 @@
 namespace DesktopFilesGui.Models.Enums;
 
-public enum DesktopFileType
+public enum DesktopFileType : byte
 {
     Application,
     Link,

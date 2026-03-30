@@ -7,5 +7,5 @@ public sealed class CountryInfo
 {
     public required string IconPath { get; set; }
     public required List<string> Keys { get; set; }
-    public string CountryName { get; set; }
+    public required string CountryName { get; set; }
 }

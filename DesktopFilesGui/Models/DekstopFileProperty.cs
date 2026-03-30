@@ -4,4 +4,4 @@ using DesktopFilesGui.Attributes;
 
 namespace DesktopFilesGui.Models;
 
-public record DesktopFileProperty(IDesktopFileBaseAttribute? Attribute, PropertyInfo ClrProperty);
+public record DesktopFileProperty(IDesktopFileBaseAttribute? Attribute, object ValueActual);

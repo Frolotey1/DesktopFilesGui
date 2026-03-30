@@ -20,7 +20,8 @@ namespace DesktopFilesGui.Controls;
 public partial class LocalizableField : UserControl
 {
     private MaterialThemeBase? _theme;
-    private string? _countyKey;
+    private IReadOnlyCollection<string> _countyKeyes = [];
+    private object _lock = new object();
 
     public static readonly StyledProperty<MaterialIconKind> IconProperty =
         AvaloniaProperty.Register<LocalizableField, MaterialIconKind>(nameof(Icon));
@@ -94,23 +95,26 @@ public partial class LocalizableField : UserControl
     private void UpdateTextBoxBinding(object? sender, SelectionChangedEventArgs e)
     {
         //Here is no real binding
-        var comboBox = (ComboBox)sender!;
-        var selectedItem = comboBox.SelectedItem as CountryInfo;
+        lock (_lock)
+        {
+            var comboBox = (ComboBox)sender!;
+            var selectedItem = comboBox.SelectedItem as CountryInfo;
 
-        if (selectedItem is null)
-            return;
+            if (selectedItem is null)
+                return;
         
-        if (LocalizationDictionary is null)
-            return;
+            if (LocalizationDictionary is null)
+                return;
 
-        if (LocalizedTextBox.Text is null)
-            return;
+            if (LocalizedTextBox?.Text is null)
+                return;
+            
+            if (_countyKeyes.Any())
+                foreach (var countyKey in _countyKeyes)
+                     LocalizationDictionary[countyKey] = LocalizedTextBox.Text;
 
-        if (_countyKey is null)
-            return;
-
-        LocalizationDictionary[_countyKey] = LocalizedTextBox.Text;
-        
-        _countyKey = selectedItem.Keys
+            _countyKeyes = selectedItem.Keys.AsReadOnly();
+        }
+    
     }
 }
