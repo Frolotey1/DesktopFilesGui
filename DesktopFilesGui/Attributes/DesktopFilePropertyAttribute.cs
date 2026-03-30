@@ -6,7 +6,7 @@ namespace DesktopFilesGui.Attributes;
 
 [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
 [AttributeUsage(AttributeTargets.Property)]
-public class DesktopFilePropertyAttribute : Attribute
+public class DesktopFilePropertyAttribute : Attribute, IDesktopFileBaseAttribute
 {
     public DesktopFilePropertyAttribute(string key, DesktopFileType typeWhenAdd)
     {

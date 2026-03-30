@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Data;
 using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
 using Avalonia.Markup.Xaml;
@@ -18,6 +20,7 @@ namespace DesktopFilesGui.Controls;
 public partial class LocalizableField : UserControl
 {
     private MaterialThemeBase? _theme;
+    private string? _countyKey;
 
     public static readonly StyledProperty<MaterialIconKind> IconProperty =
         AvaloniaProperty.Register<LocalizableField, MaterialIconKind>(nameof(Icon));
@@ -28,10 +31,19 @@ public partial class LocalizableField : UserControl
     public static readonly StyledProperty<bool> EnableLocalizationProperty =
         AvaloniaProperty.Register<LocalizableField, bool>(nameof(EnableLocalization));
 
-    public static readonly StyledProperty<IDictionary<string, string>> LocalizationDictionaryProperty = AvaloniaProperty.Register<LocalizableField, IDictionary<string, string>>(
+    public static readonly StyledProperty<IDictionary<string, string>?> LocalizationDictionaryProperty = AvaloniaProperty.Register<LocalizableField, IDictionary<string, string>?>(
         nameof(LocalizationDictionary));
 
-    public IDictionary<string, string> LocalizationDictionary
+    public static readonly StyledProperty<string> UnlocalizedValueProperty = AvaloniaProperty.Register<LocalizableField, string>(
+        nameof(UnlocalizedValue));
+
+    public string UnlocalizedValue
+    {
+        get => GetValue(UnlocalizedValueProperty);
+        set => SetValue(UnlocalizedValueProperty, value);
+    }
+
+    public IDictionary<string, string>? LocalizationDictionary
     {
         get => GetValue(LocalizationDictionaryProperty);
         set => SetValue(LocalizationDictionaryProperty, value);
@@ -77,5 +89,28 @@ public partial class LocalizableField : UserControl
         
         if (LocalizationDictionary?.ContainsRangeKey(country?.Keys ?? []) ?? false)
             item.Background = new SolidColorBrush(_theme.CurrentTheme.PrimaryMid.Color);
+    }
+
+    private void UpdateTextBoxBinding(object? sender, SelectionChangedEventArgs e)
+    {
+        //Here is no real binding
+        var comboBox = (ComboBox)sender!;
+        var selectedItem = comboBox.SelectedItem as CountryInfo;
+
+        if (selectedItem is null)
+            return;
+        
+        if (LocalizationDictionary is null)
+            return;
+
+        if (LocalizedTextBox.Text is null)
+            return;
+
+        if (_countyKey is null)
+            return;
+
+        LocalizationDictionary[_countyKey] = LocalizedTextBox.Text;
+        
+        _countyKey = selectedItem.Keys
     }
 }

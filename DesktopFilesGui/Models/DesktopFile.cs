@@ -48,4 +48,10 @@ public sealed class DesktopFile
     
     [LocalizedDesktopFileProperty("GenericName")]
     public IDictionary<string, string>? LocalizedGenericName { get; set; }
+    
+    [DesktopFileProperty("Comment")]
+    public string? Comment { get; set; }
+    
+    [LocalizedDesktopFileProperty("Comment")]
+    public IDictionary<string, string>? LocalizedComment { get; set; }
 }

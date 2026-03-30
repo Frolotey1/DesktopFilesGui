@@ -23,6 +23,7 @@
                 Classes="S"
                 Height="30"
                 ItemsSource="{StaticResource Countries}"
+                SelectionChanged="UpdateTextBoxBinding"
                 Width="70"
                 x:Name="CountryComboBox">
 
@@ -52,7 +53,10 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBox Watermark="{Binding Watermark, ElementName=RootControl}" Width="300" />
+            <TextBox
+                Name="LocalizedTextBox"
+                Watermark="{Binding Watermark, ElementName=RootControl}"
+                Width="300" />
         </StackPanel>
     </StackPanel>
 </UserControl>

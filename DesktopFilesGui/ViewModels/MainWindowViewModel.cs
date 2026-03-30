@@ -36,8 +36,12 @@ public partial class MainWindowViewModel : ViewModelBase
     [Required(ErrorMessage =  "This parameter is required")]
     private string? _pathToRunFile;
     
-    [ObservableProperty]
-    private ObservableDictionary<string, string> _localizedNames = new();
+    [ObservableProperty] private ObservableDictionary<string, string> _localizedNames = new();
+    [ObservableProperty] private ObservableDictionary<string, string> _localizedGenericNames = new();
+    [ObservableProperty] private ObservableDictionary<string, string> _localizedComments = new();
+
+    [ObservableProperty] private string? _genericName;
+    [ObservableProperty] private string? _comment;
    
     [ObservableProperty]
     [FileExists(requiredNotBeEmpty: false)]

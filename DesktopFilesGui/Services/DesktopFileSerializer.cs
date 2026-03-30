@@ -1,7 +1,10 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using Avalonia.Input;
 using DesktopFilesGui.Attributes;
 using DesktopFilesGui.Extensions;
 using DesktopFilesGui.Models;
@@ -20,7 +23,8 @@ public class DesktopFileSerializer(ILogger logger) : IDesktopFileSerializer
 
         fileContentBuilder.AppendLine(StaticConfiguration.DESKTOP_FILE_STARTING);
         
-        var properties = GetDesktopProperties(desktopFile);
+        var properties = ((IEnumerable<KeyValuePair<string, string?>>)GetDesktopProperties(desktopFile))
+            .Concat(GetLocalizedProperties(desktopFile));
 
         foreach (var property in properties)
         {
@@ -34,24 +38,16 @@ public class DesktopFileSerializer(ILogger logger) : IDesktopFileSerializer
         return result;
     }
 
-    private bool IsNotEmptyValue(string propertyValue)
+    private bool IsNotEmptyValue(string? propertyValue)
     {
+        // ; means empty desktop file array
         return propertyValue is not [';'] && !string.IsNullOrWhiteSpace(propertyValue);
     }
 
     private IEnumerable<KeyValuePair<string, string>> GetDesktopProperties(DesktopFile desktopFile)
     {
-        var properties = desktopFile.GetType()
-            .GetProperties()
-            .Select(prop => new {
-                ClrProperty = prop,
-                DesktopFileAttribute = prop.GetCustomAttribute<DesktopFilePropertyAttribute>()
-            })
-            .Where(prop => prop.DesktopFileAttribute is  not null)
-            .Where(prop => 
-                prop.DesktopFileAttribute!.TypeWhenAdd is null 
-                || prop.DesktopFileAttribute!.TypeWhenAdd == desktopFile.Type)
-            .Where(prop => prop.ClrProperty != typeof(KeyValuePair<string,IEnumerable<string>>))
+        var properties = desktopFile
+            .GetDesktopFileProperties<DesktopFilePropertyAttribute>()
             .Select(prop =>
             {
                 var value = prop.ClrProperty.PropertyType == typeof(IEnumerable<string>)
@@ -60,16 +56,51 @@ public class DesktopFileSerializer(ILogger logger) : IDesktopFileSerializer
                     .ToDesktopFileArray()
                     : prop.ClrProperty?.GetValue(desktopFile)?.ToString() ?? string.Empty;
 
-                var key = prop.DesktopFileAttribute!.Key;
-                
-                if(string.IsNullOrWhiteSpace(value))
-                    logger.Warning("This desktop file has invalidated property values at key {key} and may be corrupted", key);
-                
+                var key = prop.Attribute!.Key;
+
+                if (string.IsNullOrWhiteSpace(value))
+                    logger.Warning(
+                        "This desktop file has invalidated property values at key {key} and may be corrupted", key);
+
                 return KeyValuePair.Create(key, value);
 
             });
         
         return properties;
+    }
 
+    private IEnumerable<KeyValuePair<string, string?>> GetLocalizedProperties(DesktopFile desktopFile)
+    {
+        var properties = desktopFile
+            .GetDesktopFileProperties<LocalizedDesktopFilePropertyAttribute>()
+            .Select(property =>
+            {
+                var objectValue = property.ClrProperty.GetValue(desktopFile);
+             
+                if(objectValue is not IDictionary dictionary)
+                    throw new InvalidOperationException($"Property that has {nameof(LocalizedDesktopFilePropertyAttribute)} must implement {nameof(IDictionary)}");
+
+                var formattedDictionary = new Dictionary<string, string?>(capacity: dictionary.Count);
+                
+                foreach (var key in dictionary.Keys)
+                {
+                    if(key is null)
+                        throw new InvalidOperationException($"Dictionary that has {nameof(LocalizedDesktopFilePropertyAttribute)} must have no contains null-keys");
+                    
+                    var value = dictionary[key];
+                    var desktopFileValue = value is IEnumerable<string> enumerable 
+                        ? enumerable.ToDesktopFileArray()
+                        : (string?)value;
+
+                    var desktopFileKey = $"{property.Attribute!.Key}[{key as string ?? string.Empty}]";
+                    formattedDictionary[desktopFileKey] = desktopFileValue;
+                }
+                
+                return formattedDictionary;
+            });
+
+        foreach (var property in properties)
+          foreach (var keyValuePair in property)
+                 yield return keyValuePair;
     }
 }

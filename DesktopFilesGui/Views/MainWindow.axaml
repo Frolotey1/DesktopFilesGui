@@ -157,10 +157,14 @@
                 <controls:LocalizableField
                     EnableLocalization="{Binding EnableLocalization}"
                     Icon="Application"
+                    LocalizationDictionary="{Binding LocalizedNames}"
+                    UnlocalizedValue="{Binding ApplicationName}"
                     Watermark="Application name" />
                 <controls:LocalizableField
                     EnableLocalization="{Binding EnableLocalization}"
                     Icon="CommentAdd"
+                    LocalizationDictionary="{Binding LocalizedComments}"
+                    UnlocalizedValue="{Binding Comment}"
                     Watermark="Comment" />
                 <controls:LocalizableField
                     EnableLocalization="{Binding EnableLocalization}"
@@ -169,6 +173,8 @@
                 <controls:LocalizableField
                     EnableLocalization="{Binding EnableLocalization}"
                     Icon="ImageDescription"
+                    LocalizationDictionary="{Binding LocalizedGenericNames}"
+                    UnlocalizedValue="{Binding GenericName}"
                     Watermark="Generic name" />
 
                 <Separator />
@@ -181,7 +187,7 @@
                         Width="{StaticResource IconWidth}" />
                     <TextBox
                         Text="{Binding PathToOutput}"
-                        Watermark="Path to .desktop file"
+                        Watermark="Output path"
                         Width="{StaticResource TextBoxWidth}" />
                     <Button
                         Click="SelectDirectory"
