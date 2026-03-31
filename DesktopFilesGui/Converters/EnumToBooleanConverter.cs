@@ -7,17 +7,17 @@ using DesktopFilesGui.Models.Enums;
 
 namespace DesktopFilesGui.Converters;
 
-public sealed class DesktopFileTypeToBooleanConverter : MarkupExtension, IValueConverter
+public sealed class EnumToBooleanConverter : MarkupExtension, IValueConverter
 {
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value is not DesktopFileType desktopFileType)
+        if (value is not Enum @enum)
             return false;
         
-        if(parameter is not DesktopFileType expectedDesktopFileType)
+        if(parameter is not Enum expected)
             return false;
             
-        return desktopFileType == expectedDesktopFileType;
+        return @enum.Equals(expected);
     }
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

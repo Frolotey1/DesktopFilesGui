@@ -6,8 +6,11 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using CommunityToolkit.Mvvm.DependencyInjection;
+using DesktopFilesGui.Extensions;
+using DesktopFilesGui.Models.Enums;
 using DesktopFilesGui.Services;
 using DesktopFilesGui.Services.Interfaces;
 using DesktopFilesGui.ViewModels;
@@ -58,6 +61,8 @@ public sealed partial class App : Application
             .AddSingleton<IRootRequirer, RootRequirer>()
             .AddScoped<IDesktopFilesListPresenter, DesktopFilesListPresenter>()
             .AddTransient<IConfigurationJsonCreator, ConfigurationJsonCreator>()
+            .AddWindow<Window, ThemeView, ThemeViewModel>(ViewType.Theme)
+            .AddWindow<Window, DesktopFileListView, DesktopFileListViewModel>(ViewType.DesktopFilesList)
             .AddSingleton<MainWindowViewModel>()
             .AddSingleton<MainWindow>();
         

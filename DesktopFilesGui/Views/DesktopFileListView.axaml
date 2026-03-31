@@ -1,12 +1,65 @@
 <Window
-    Title="ApplicationsListView"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    CanResize="False"
+    MaxHeight="400"
+    MaxWidth="500"
+    Title="Desktop files list"
+    d:DesignHeight="400"
+    d:DesignWidth="500"
     mc:Ignorable="d"
     x:Class="DesktopFilesGui.Views.DesktopFileListView"
     xmlns="https://github.com/avaloniaui"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    Welcome to Avalonia!
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <icons:MaterialIcon
+                Kind="Search"
+                Margin="15,-7,3,0"
+                Width="20" />
+            <TextBox
+                BorderBrush="Red"
+                BorderThickness="1"
+                Classes="outline"
+                Margin="5,0,0,10"
+                Name="SearchTextBox"
+                Watermark="Path to desktop files"
+                Width="430" />
+        </StackPanel>
+        <Grid
+            ColumnDefinitions="Auto, Auto, Auto"
+            HorizontalAlignment="Left"
+            Margin="5,0,0,0"
+            Width="150">
+            <Button
+                BorderThickness="1,1,0,1"
+                Classes="outline"
+                CornerRadius="10 0 0 10"
+                Grid.Column="0"
+                ToolTip.Tip="Group files as table">
+                <icons:MaterialIcon Kind="TableBorder" />
+            </Button>
+            <Button
+                BorderThickness="0,1,0,1"
+                Classes="outline"
+                CornerRadius="0 "
+                Grid.Column="1"
+                Margin="-1.1,0,0,0"
+                ToolTip.Tip="Group files as grid">
+                <icons:MaterialIcon Kind="Grid" />
+
+            </Button>
+            <Button
+                BorderThickness="0,1,1,1"
+                Classes="outline"
+                CornerRadius="0 10 10 0"
+                Grid.Column="2"
+                Margin="-1.1,0,0,0"
+                ToolTip.Tip="Group files as list">
+                <icons:MaterialIcon Kind="ListBoxOutline" />
+            </Button>
+        </Grid>
+        <Separator Margin="10,8" />
+    </StackPanel>
 </Window>

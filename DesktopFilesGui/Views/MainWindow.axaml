@@ -4,7 +4,7 @@
     MaxWidth="400"
     MinHeight="100"
     MinWidth="80"
-    Title="DesktopFilesGui"
+    Title="Edit desktop file"
     x:Class="DesktopFilesGui.Views.MainWindow"
     x:DataType="vm:MainWindowViewModel"
     xmlns="https://github.com/avaloniaui"
@@ -32,7 +32,10 @@
                     Click="OpenDesktopFiles"
                     Header="Open desktop files in 'Files'"
                     Icon="{icons:MaterialIconExt Kind=Files}" />
-                <MenuItem Header="Show list of the desktop file" Icon="{icons:MaterialIconExt Kind=ListBox}" />
+                <MenuItem
+                    Click="ShowDesktopFilesList"
+                    Header="Show list of the desktop file"
+                    Icon="{icons:MaterialIconExt Kind=Files}" />
                 <MenuItem Header="Open desktop file" Icon="{icons:MaterialIconExt Kind=OpenInApp}" />
             </MenuItem>
             <MenuItem Header="Services">
@@ -83,7 +86,7 @@
                 </StackPanel>
 
 
-                <StackPanel IsVisible="{Binding SelectedFileType, Converter={converters:DesktopFileTypeToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Application}'}" Orientation="Horizontal">
+                <StackPanel IsVisible="{Binding SelectedFileType, Converter={converters:EnumToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Application}'}" Orientation="Horizontal">
                     <icons:MaterialIcon
                         Kind="File"
                         Margin="5,0,10,0"
@@ -101,7 +104,7 @@
                         Width="{StaticResource ButtonSize}" />
                 </StackPanel>
 
-                <StackPanel IsVisible="{Binding SelectedFileType, Converter={converters:DesktopFileTypeToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Link}'}" Orientation="Horizontal">
+                <StackPanel IsVisible="{Binding SelectedFileType, Converter={converters:EnumToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Link}'}" Orientation="Horizontal">
                     <icons:MaterialIcon
                         Kind="LinkAdd"
                         Margin="5,0,10,0"
@@ -136,7 +139,7 @@
                 <controls:CheckBoxWithHelp
                     Content="Show terminal"
                     IsChecked="{Binding ShowTerminal}"
-                    IsEnabled="{Binding SelectedFileType, Converter={converters:DesktopFileTypeToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Application}'}"
+                    IsEnabled="{Binding SelectedFileType, Converter={converters:EnumToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Application}'}"
                     ToolTip="Allows terminal to appear after application start" />
                 <controls:CheckBoxWithHelp
                     Content="Require sudo"

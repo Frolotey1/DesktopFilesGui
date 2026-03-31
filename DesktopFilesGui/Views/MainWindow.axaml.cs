@@ -83,10 +83,14 @@ public sealed partial class MainWindow : Window
         return textBox;
     }
 
+    private void ShowDesktopFilesList(object? sender, RoutedEventArgs e)
+    {
+         DialogHelper.ShowDialog(this, ViewType.DesktopFilesList);
+    }
+
     private void OpenThemes(object? sender, RoutedEventArgs e)
     {
-        var themeView = new ThemeView();
-        themeView.ShowDialog(this);
+        DialogHelper.ShowDialog(this, ViewType.Theme);
     }
 
     private void OpenDesktopFiles(object? sender, RoutedEventArgs e)
