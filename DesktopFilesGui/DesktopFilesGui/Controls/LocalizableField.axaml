@@ -1,0 +1,62 @@
+<UserControl
+    x:Class="DesktopFilesGui.Controls.LocalizableField"
+    x:Name="RootControl"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:converters="clr-namespace:DesktopFilesGui.Converters"
+    xmlns:generic="clr-namespace:System.Collections.Generic;assembly=System.Collections"
+    xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+    xmlns:models="clr-namespace:DesktopFilesGui.Models"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <StackPanel>
+        <StackPanel IsVisible="{Binding EnableLocalization, ElementName=RootControl, Converter={converters:ReverseBooleanConverter}}" Orientation="Horizontal">
+            <icons:MaterialIcon
+                Kind="{Binding Icon, ElementName=RootControl}"
+                Margin="5,0,10,0"
+                Width="20" />
+            <TextBox Watermark="{Binding Watermark, ElementName=RootControl}" Width="300" />
+        </StackPanel>
+
+        <StackPanel IsVisible="{Binding EnableLocalization, ElementName=RootControl}" Orientation="Horizontal">
+            <ComboBox
+                Classes="S"
+                Height="30"
+                ItemsSource="{StaticResource Countries}"
+                SelectionChanged="UpdateTextBoxBinding"
+                Width="70"
+                x:Name="CountryComboBox">
+
+                <ComboBox.SelectionBoxItemTemplate>
+                    <DataTemplate DataType="models:CountryInfo">
+                        <Image
+                            Height="30"
+                            Margin="10,0,10,0"
+                            Source="{Binding IconPath, Converter={converters:StringToImageConverter}}"
+                            Width="30" />
+                    </DataTemplate>
+                </ComboBox.SelectionBoxItemTemplate>
+
+                <ComboBox.ItemTemplate>
+                    <DataTemplate DataType="models:CountryInfo">
+                        <StackPanel
+                            Loaded="Control_OnLoaded"
+                            Orientation="Horizontal"
+                            Width="500">
+                            <Image
+                                Height="30"
+                                Margin="5,0,10,0"
+                                Source="{Binding IconPath, Converter={converters:StringToImageConverter}}"
+                                Width="30" />
+                            <Label Content="{Binding CountryName}" FontSize="17" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBox
+                Name="LocalizedTextBox"
+                Watermark="{Binding Watermark, ElementName=RootControl}"
+                Width="300" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

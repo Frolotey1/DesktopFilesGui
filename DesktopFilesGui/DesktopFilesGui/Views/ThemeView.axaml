@@ -1,0 +1,51 @@
+<Window
+    CanMaximize="False"
+    MaxHeight="300"
+    MaxWidth="400"
+    Title="DesktopFileGui - Themes"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d"
+    x:Class="DesktopFilesGui.Views.ThemeView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel>
+        <StackPanel.Styles>
+            <Style Selector="ColorPicker">
+                <Setter Property="IsAccentColorsVisible" Value="True" />
+                <Setter Property="IsAlphaVisible" Value="False" />
+                <Setter Property="IsColorComponentsVisible" Value="False" />
+                <Setter Property="IsColorModelVisible" Value="True" />
+                <Setter Property="IsColorPaletteVisible" Value="True" />
+                <Setter Property="IsColorSpectrumSliderVisible" Value="True" />
+                <Setter Property="IsColorSpectrumVisible" Value="True" />
+                <Setter Property="IsComponentSliderVisible" Value="False" />
+                <Setter Property="IsComponentTextInputVisible" Value="False" />
+                <Setter Property="IsHexInputVisible" Value="False" />
+                <Setter Property="Margin" Value="20,13,0,0" />
+                <Setter Property="Palette">
+                    <Setter.Value>
+                        <MaterialHalfColorPalette />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style Selector="TextBlock">
+                <Setter Property="Margin" Value="20,20,0,0" />
+            </Style>
+        </StackPanel.Styles>
+        <TextBlock FontWeight="Bold" Text="Theme settings" />
+        <Separator />
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Name="PrimaryColor" Text="Primary color" />
+            <ColorPicker />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="20,20,0,0" Text="Secondary color" />
+            <ColorPicker />
+        </StackPanel>
+    </StackPanel>
+
+</Window>

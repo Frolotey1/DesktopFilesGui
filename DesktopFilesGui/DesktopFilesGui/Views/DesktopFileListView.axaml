@@ -1,0 +1,90 @@
+<Window
+    CanResize="False"
+    MaxHeight="550"
+    MaxWidth="450"
+    Title="Desktop files list"
+    d:DesignHeight="550"
+    d:DesignWidth="450"
+    mc:Ignorable="d"
+    x:Class="DesktopFilesGui.Views.DesktopFileListView"
+    x:DataType="vm:DesktopFileListViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:controls="clr-namespace:DesktopFilesGui.Controls"
+    xmlns:converters="clr-namespace:DesktopFilesGui.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:modelEnums="clr-namespace:DesktopFilesGui.Models.Enums"
+    xmlns:models="clr-namespace:DesktopFilesGui.Models"
+    xmlns:vm="clr-namespace:DesktopFilesGui.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel>
+
+        <Interaction.Behaviors>
+            <EventTriggerBehavior EventName="Loaded">
+                <InvokeCommandAction Command="{Binding LoadFilesCommand}" />
+            </EventTriggerBehavior>
+        </Interaction.Behaviors>
+
+        <StackPanel Orientation="Horizontal">
+
+            <icons:MaterialIcon
+                Foreground="{Binding #SearchTextBox.Foreground}"
+                Kind="Search"
+                Margin="15,-7,3,0"
+                Width="20" />
+            <TextBox
+                Margin="5,0,0,10"
+                Name="SearchTextBox"
+                Text="{Binding Path, Mode=TwoWay}"
+                Watermark="Path to desktop files"
+                Width="430" />
+        </StackPanel>
+        <Grid
+            ColumnDefinitions="Auto, Auto, Auto, *"
+            HorizontalAlignment="Left"
+            Margin="5,0,0,0"
+            Width="150">
+            <Button
+                BorderThickness="1,1,0,1"
+                Classes="outline"
+                Command="{Binding UpdateFilesViewTypeCommand}"
+                CommandParameter="{x:Static modelEnums:FilesViewType.Table}"
+                CornerRadius="10 0 0 10"
+                Grid.Column="0"
+                IsEnabled="{Binding FilesViewType, Converter={converters:ReversedEnumToBooleanConverter}, ConverterParameter='{x:Static modelEnums:FilesViewType.Table}'}"
+                ToolTip.Tip="Group files as table">
+                <icons:MaterialIcon Kind="TableBorder" />
+            </Button>
+            <Button
+                BorderThickness="0,1,0,1"
+                Classes="outline"
+                Command="{Binding UpdateFilesViewTypeCommand}"
+                CommandParameter="{x:Static modelEnums:FilesViewType.Grid}"
+                CornerRadius="0 "
+                Grid.Column="1"
+                IsEnabled="{Binding FilesViewType, Converter={converters:ReversedEnumToBooleanConverter}, ConverterParameter='{x:Static modelEnums:FilesViewType.Grid}'}"
+                Margin="-1.1,0,0,0"
+                ToolTip.Tip="Group files as grid">
+                <icons:MaterialIcon Kind="Grid" />
+
+            </Button>
+            <Button
+                BorderThickness="0,1,1,1"
+                Classes="outline"
+                Command="{Binding UpdateFilesViewTypeCommand}"
+                CommandParameter="{x:Static modelEnums:FilesViewType.List}"
+                CornerRadius="0 10 10 0"
+                Grid.Column="2"
+                IsEnabled="{Binding FilesViewType, Converter={converters:ReversedEnumToBooleanConverter}, ConverterParameter='{x:Static modelEnums:FilesViewType.List}'}"
+                Margin="-1.1,0,0,0"
+                ToolTip.Tip="Group files as list">
+                <icons:MaterialIcon Kind="ListBoxOutline" />
+            </Button>
+
+        </Grid>
+
+
+    </StackPanel>
+</Window>

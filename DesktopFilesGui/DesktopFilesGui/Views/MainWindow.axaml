@@ -1,0 +1,334 @@
+<Window
+    CanMaximize="False"
+    MaxHeight="500"
+    MaxWidth="400"
+    MinHeight="100"
+    MinWidth="80"
+    Title="Edit desktop file"
+    x:Class="DesktopFilesGui.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:avaloniaEdit="https://github.com/avaloniaui/avaloniaedit"
+    xmlns:controls="clr-namespace:DesktopFilesGui.Controls"
+    xmlns:converters="clr-namespace:DesktopFilesGui.Converters"
+    xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+    xmlns:interactions="clr-namespace:Avalonia.Xaml.Interactions;assembly=Avalonia.Xaml.Interactions"
+    xmlns:interactivity="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+    xmlns:modelEnums="clr-namespace:DesktopFilesGui.Models.Enums"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vm="using:DesktopFilesGui.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Window.Resources>
+        <sys:Double x:Key="TextBoxWidth">300</sys:Double>
+        <sys:Double x:Key="ButtonSize">50</sys:Double>
+        <sys:Double x:Key="IconWidth">20</sys:Double>
+    </Window.Resources>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Menu Grid.Row="0">
+            <MenuItem Header="Open" Name="OpenMenuItem">
+                <MenuItem
+                    Click="OpenDesktopFiles"
+                    Header="Open desktop files in 'Files'"
+                    Icon="{icons:MaterialIconExt Kind=Files}" />
+                <MenuItem
+                    Click="ShowDesktopFilesList"
+                    Header="Show list of the desktop file"
+                    Icon="{icons:MaterialIconExt Kind=Files}" />
+                <MenuItem Header="Open desktop file" Icon="{icons:MaterialIconExt Kind=OpenInApp}" />
+            </MenuItem>
+            <MenuItem Header="Services">
+                <MenuItem
+                    Click="CloseApp"
+                    Header="Close the app"
+                    Icon="{icons:MaterialIconExt Kind=Close}" />
+                <MenuItem
+                    Command="{Binding OpenGithubSourceCommand}"
+                    Header="Open github source"
+                    Icon="{icons:MaterialIconExt Kind=Github}" />
+            </MenuItem>
+            <MenuItem
+                Click="OpenThemes"
+                Header="Themes"
+                Icon="{icons:MaterialIconExt Kind=Theme}" />
+        </Menu>
+
+        <ScrollViewer Grid.Row="1" Margin="5,0,0,0">
+            <StackPanel>
+                <TextBlock Margin="0,15,0,0" Text="Main configuration" />
+
+
+                <StackPanel Orientation="Horizontal">
+                    <icons:MaterialIcon
+                        Kind="Rename"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource IconWidth}" />
+                    <TextBox
+                        Text="{Binding FileName}"
+                        Watermark="Desktop file name"
+                        Width="{StaticResource TextBoxWidth}" />
+                </StackPanel>
+
+
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <icons:MaterialIcon
+                        Height="{StaticResource IconWidth}"
+                        Kind="FormatTextbox"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource IconWidth}" />
+                    <ComboBox
+                        Loaded="LoadItems"
+                        Name="TypesComboBox"
+                        SelectedItem="{Binding SelectedFileType}"
+                        ToolTip.Tip="Type of the .desktop file"
+                        Width="{StaticResource TextBoxWidth}" />
+                </StackPanel>
+
+
+                <StackPanel IsVisible="{Binding SelectedFileType, Converter={converters:EnumToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Application}'}" Orientation="Horizontal">
+                    <icons:MaterialIcon
+                        Kind="File"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource IconWidth}" />
+                    <TextBox
+                        Text="{Binding PathToRunFile}"
+                        Watermark="Path to file"
+                        Width="{StaticResource TextBoxWidth}" />
+                    <Button
+                        Click="SelectFile"
+                        Content="{icons:MaterialIconExt Kind=Search}"
+                        Height="{StaticResource ButtonSize}"
+                        Margin="5,0,10,0"
+                        Name="SearchButton"
+                        Width="{StaticResource ButtonSize}" />
+                </StackPanel>
+
+                <StackPanel IsVisible="{Binding SelectedFileType, Converter={converters:EnumToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Link}'}" Orientation="Horizontal">
+
+                    <icons:MaterialIcon
+                        Kind="LinkAdd"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource IconWidth}" />
+                    <TextBox
+                        Text="{Binding Url}"
+                        Watermark="URL"
+                        Width="{StaticResource TextBoxWidth}" />
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal">
+                    <icons:MaterialIcon
+                        Kind="ImageAdd"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource IconWidth}" />
+                    <TextBox
+                        Text="{Binding PathToIcon, Mode=TwoWay}"
+                        Watermark="Path to icon"
+                        Width="{StaticResource TextBoxWidth}" />
+                    <Button
+                        Click="SelectFile"
+                        Content="{icons:MaterialIconExt Kind=Search}"
+                        Height="{StaticResource ButtonSize}"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource ButtonSize}" />
+                </StackPanel>
+
+                <Separator />
+                <TextBlock Margin="0,15,0,0" Text="Boolean configuration" />
+
+                <controls:CheckBoxWithHelp
+                    Content="Show terminal"
+                    IsChecked="{Binding ShowTerminal}"
+                    IsEnabled="{Binding SelectedFileType, Converter={converters:EnumToBooleanConverter}, ConverterParameter='{x:Static modelEnums:DesktopFileType.Application}'}"
+                    ToolTip="Allows terminal to appear after application start" />
+                <controls:CheckBoxWithHelp
+                    Content="Require sudo"
+                    IsChecked="{Binding RequireSudo}"
+                    ToolTip="Runs application with super user rights" />
+                <controls:CheckBoxWithHelp
+                    Content="Display in menu"
+                    IsChecked="{Binding DisplayInMenu}"
+                    ToolTip="If unchecked, do not show in the menu" />
+                <controls:CheckBoxWithHelp
+                    Content="Enable localization"
+                    IsChecked="{Binding EnableLocalization}"
+                    ToolTip="If checked, replace application name text box to new, with localization support" />
+
+                <Separator />
+                <TextBlock Margin="0,15,0,0" Text="Localizable configuration" />
+
+                <controls:LocalizableField
+                    EnableLocalization="{Binding EnableLocalization}"
+                    Icon="Application"
+                    LocalizationDictionary="{Binding LocalizedNames}"
+                    UnlocalizedValue="{Binding ApplicationName}"
+                    Watermark="Application name" />
+                <controls:LocalizableField
+                    EnableLocalization="{Binding EnableLocalization}"
+                    Icon="CommentAdd"
+                    LocalizationDictionary="{Binding LocalizedComments}"
+                    UnlocalizedValue="{Binding Comment}"
+                    Watermark="Comment" />
+                <controls:LocalizableField
+                    EnableLocalization="{Binding EnableLocalization}"
+                    Icon="FileWord"
+                    Watermark="Keywords (';' divided)" />
+                <controls:LocalizableField
+                    EnableLocalization="{Binding EnableLocalization}"
+                    Icon="ImageDescription"
+                    LocalizationDictionary="{Binding LocalizedGenericNames}"
+                    UnlocalizedValue="{Binding GenericName}"
+                    Watermark="Generic name" />
+
+                <Separator />
+                <TextBlock Margin="0,15,0,0" Text="Extended configuration" />
+
+                <StackPanel Orientation="Horizontal">
+                    <icons:MaterialIcon
+                        Kind="FolderSearch"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource IconWidth}" />
+                    <TextBox
+                        Text="{Binding PathToOutput}"
+                        Watermark="Output path"
+                        Width="{StaticResource TextBoxWidth}" />
+                    <Button
+                        Click="SelectDirectory"
+                        Content="{icons:MaterialIconExt Kind=Search}"
+                        Height="{StaticResource ButtonSize}"
+                        Margin="5,0,10,0"
+                        Width="{StaticResource ButtonSize}" />
+                </StackPanel>
+
+                <controls:CheckBoxWithHelp
+                    Content="Is hidden"
+                    IsChecked="{Binding IsHidden}"
+                    ToolTip="Hide application in the menu (useful if application is removed)" />
+
+                <Separator />
+                <TextBlock Margin="0,15,0,0" Text="Professional configuration" />
+
+                <controls:CheckBoxWithHelp
+                    Content="Run from D-BUS"
+                    IsChecked="{Binding RunFromDBus}"
+                    ToolTip="Mark that application will be run from D-BUS" />
+
+                <controls:CheckBoxWithHelp
+                    Content="Startup notify support"
+                    IsChecked="{Binding StartupNotifySupport}"
+                    ToolTip="Mark that application support startup notifications" />
+
+                <controls:CheckBoxWithHelp
+                    Content="Create anyway"
+                    IsChecked="{Binding ForceCreateDesktopFile}"
+                    ToolTip="Allows user create desktop file ignoring validation rules" />
+
+
+                <controls:CheckBoxWithHelp
+                    Content="Custom 'exec' command"
+                    IsChecked="{Binding UseCustomExecCommand}"
+                    ToolTip="Allows user write custom 'exec' command to run application where {{PATH}} path to file" />
+
+
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Margin="0,7,0,0" Orientation="Horizontal">
+                        <icons:MaterialIcon
+                            Kind="Files"
+                            Margin="5,0,10,0"
+                            Width="{StaticResource IconWidth}" />
+                        <TextBlock Margin="0,5,0,0" Text="Supported MIME types" />
+                    </StackPanel>
+                    <ListBox
+                        BorderBrush="{Binding #OpenMenuItem.Foreground}"
+                        BorderThickness="3"
+                        Height="150"
+                        ItemsSource="{Binding SupportedMimeTypes}"
+                        Margin="5,15"
+                        Name="MimesControl">
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Height="67" Orientation="Horizontal">
+                                    <icons:MaterialIcon Kind="FileKey" />
+                                    <TextBox
+                                        BorderBrush="Transparent"
+                                        HorizontalAlignment="Left"
+                                        Margin="12,0,0,0"
+                                        Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        VerticalAlignment="Center"
+                                        Width="{StaticResource TextBoxWidth}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid ColumnDefinitions="*, *">
+                        <Button
+                            Command="{Binding ClearMimeTypesCommand}"
+                            Grid.Column="0"
+                            Margin="2">
+                            <StackPanel Orientation="Horizontal">
+                                <icons:MaterialIcon Kind="TrashCan" />
+                                <Label Content="Clear" />
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            Classes="outline"
+                            Command="{Binding AddMimeTypeCommand}"
+                            Grid.Column="1"
+                            Margin="2">
+                            <StackPanel Orientation="Horizontal">
+                                <icons:MaterialIcon Kind="PlusBold" />
+                                <Label Content="Add" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Grid ColumnDefinitions="Auto,*" Grid.Row="2">
+            <Button
+                Classes="outline"
+                Command="{Binding CreateDesktopFileCommand}"
+                Grid.Column="0"
+                Height="40"
+                IsEnabled="{Binding CanCreateDesktopFile, Mode=OneWay}"
+                Margin="20,10,30,10">
+                <StackPanel Orientation="Horizontal">
+                    <icons:MaterialIcon Kind="PlusOutline" />
+                    <Label Content="Create desktop file" />
+                </StackPanel>
+            </Button>
+            <Button
+                Command="{Binding ChangeCodePopupVisibilityCommand}"
+                Content="{icons:MaterialIconExt Kind=Code}"
+                CornerRadius="30"
+                Grid.Column="1"
+                Height="{StaticResource ButtonSize}"
+                HorizontalAlignment="Right"
+                Margin="15"
+                Width="{StaticResource ButtonSize}"
+                x:Name="CodeButton" />
+            <Popup
+                Grid.Column="1"
+                Height="300"
+                IsLightDismissEnabled="True"
+                IsOpen="{Binding IsCodePopupVisible}"
+                Placement="Right"
+                PlacementTarget="{Binding ElementName=CodeButton}"
+                Width="400"
+                x:Name="CodePopup">
+                <Border BoxShadow="0 50 rgba(0,0,0,0.3)">
+                    <controls:ReadOnlyTextEditor
+                        Code="{Binding Code}"
+                        FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
+                        FontSize="16"
+                        Margin="-5,0,0,0"
+                        Name="Editor"
+                        ShowLineNumbers="True" />
+                </Border>
+            </Popup>
+        </Grid>
+    </Grid>
+</Window>
