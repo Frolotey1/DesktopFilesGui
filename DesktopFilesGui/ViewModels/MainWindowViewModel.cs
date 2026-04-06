@@ -58,7 +58,7 @@ public sealed partial class MainWindowViewModel : ViewModelBase
     [ObservableProperty] private bool _requireSudo;            
     [ObservableProperty] private bool _displayInMenu = true;   
     [ObservableProperty] private bool _isHidden;             
-    [ObservableProperty] private bool _runFromDBus;           
+    [ObservableProperty] private bool _dBusActivatable;           
     [ObservableProperty] private bool _startupNotifySupport;   
     [ObservableProperty] private bool _useCustomExecCommand;
     
