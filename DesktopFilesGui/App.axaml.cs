@@ -56,6 +56,7 @@ public sealed partial class App : Application
         
         services
             .AddSingleton<IDesktopFileSerializer, DesktopFileSerializer>()
+            .AddSingleton<IDesktopFileDeserializer, DesktopFileDeserializer>()
             .AddSingleton<IGithubSourceOpener, GithubSourceOpener>()
             .AddSingleton(Log.Logger)
             .AddSingleton<IRootRequirer, RootRequirer>()
