@@ -1071,7 +1071,7 @@
         <PackageReference Include="Material.Avalonia" Version="3.13.4" />
         <PackageReference Include="Material.Icons.Avalonia" Version="3.0.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
-        <PackageReference Include="MimeCheck" Version="1.0.0" />
+        <PackageReference Include="MimeSharp" Version="1.0.0" />
         <PackageReference Include="NuExt.System" Version="0.7.3" />
         <PackageReference Include="Serilog" Version="4.3.1" />
         <PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
