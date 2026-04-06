@@ -23,7 +23,7 @@ public sealed class DesktopFile
     public bool IsHidden { get; set; }
     
     [DesktopFileProperty("DBusActivatable", DesktopFileType.Application)]
-    public bool RunFromDBus { get; set; }
+    public bool DBusActivatable { get; set; }
     
     [DesktopFileProperty("StartupNotify", DesktopFileType.Application)]
     public bool StartupNotifySupport { get; set; }
