@@ -173,7 +173,7 @@ public sealed partial class MainWindowViewModel : ViewModelBase
             EnableLocalization = EnableLocalization,
             IsHidden = IsHidden,
             Name = ApplicationName,
-            RunFromDBus = RunFromDBus,
+            DBusActivatable = DBusActivatable,
             StartupNotifySupport = StartupNotifySupport,
             SupportedMimeTypes = SupportedMimeTypes
                 .Where(stringViewModel => stringViewModel.Value is not null)
